@@ -1,3 +1,3 @@
 # License
 
-[MIT](./../LICENSE)
+[MIT](/blob/master/LICENSE)

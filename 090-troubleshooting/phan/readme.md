@@ -1,4 +1,4 @@
-# Phan
+# Phan {#troubleshooting-phan}
 
 Make sure to specify in your `settings.json` file the PHP version you're using:
 

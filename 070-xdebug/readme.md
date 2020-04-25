@@ -18,8 +18,7 @@ Follow installation steps:
 * **extra step**: add the two lines below in the `php.ini` in the `[xdebug]` section
 
 ```ini
-xdebug.remote_enable = 1
-xdebug.remote_autostart = 1
+<!-- concat-md::include "./files/xdebug.ini" -->
 ```
 
 * save the file
@@ -47,20 +46,7 @@ Tutorial by Microsoft: `https://code.visualstudio.com/docs/editor/debugging#_lau
 Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who make possible to ignore certain files from a debugger perspective. Here, ask to not go into vendors scripts (and stay in our own scripts):
 
 ```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "port": 9000,
-            "ignore": [
-                "**/vendor/**/*.php"
-            ]
-        }
-    ]
-}
+<!-- concat-md::include "./files/launch.json" -->
 ```
 
 ### Use inside vscode

@@ -3,14 +3,7 @@
 Colors have to be set in the `.vscode/settings.json` file in the project root folder; example:
 
 ```json
-{
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#f3a2bc",
-    "titleBar.inactiveBackground": "#FF2CCC",
-    "titleBar.activeForeground": "#0e0b0b",
-    "titleBar.inactiveForeground": "#FFF000"
-  }
-}
+<!-- concat-md::include "./files/settings.json" -->
 ```
 
 To open that settings file, just go to your `Workspace settings` page.

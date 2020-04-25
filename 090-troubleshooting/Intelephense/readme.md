@@ -1,4 +1,4 @@
-# Intelephense
+# Intelephense {#troubleshooting-intelephense}
 
 In order to avoid errors with `Intelephense` like `Undefined function xxx` (f.i. `trim`) or `Undefined type xxx` (f.i. `stdClass`) for core PHP features, make sure to specify in your `settings.json`  file the correct PHP version you're using.
 

@@ -1,0 +1,7 @@
+{
+    "markdownlint.config": {
+        "ignore": [
+            "!**/History.md"
+        ]
+    }
+}

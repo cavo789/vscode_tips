@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        ".frm": "html",
+        ".php-cs": "php"
+    }
+}

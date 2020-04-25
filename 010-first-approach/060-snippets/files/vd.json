@@ -1,0 +1,11 @@
+{
+    "var-dump": {
+        "prefix": "vd",
+        "body": [
+            "echo '<pre>'.__METHOD__.'--'.__LINE__.'</pre>';",
+            "echo '<pre>'.print_r($1, true).'</pre>';",
+            "die($2);"
+        ],
+        "description": "Debug - Die and echo file/line info"
+    }
+}
