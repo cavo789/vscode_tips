@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-04-26 11:49:25 -->
+<!-- Last refresh date: 2020-04-26 16:21:56 -->
 
 <!-- below, content of ./index.md -->
 
@@ -43,6 +43,12 @@
     * [Code definition](#code-definition)
     * [PHP-Unit {#phpunit}](#php-unit-phpunit)
        * [Extensions {#phpunit-extensions}](#extensions-phpunit-extensions)
+    * [Using xDebug {#xdebug}](#using-xdebug-xdebug)
+       * [Installation](#installation)
+          * [Check if xdebug is loaded](#check-if-xdebug-is-loaded)
+       * [Visual Studio Code](#visual-studio-code)
+          * [Settings](#settings)
+          * [Use inside vscode](#use-inside-vscode)
     * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
     * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
 * [Some settings {#settings}](#some-settings-settings)
@@ -93,12 +99,6 @@
        * [PHP DocBlocker {#extensions-php-docblocker}](#php-docblocker-extensions-php-docblocker)
        * [PHP Extension Pack {#extensions-php-extension-pack}](#php-extension-pack-extensions-php-extension-pack)
        * [PHP IntelliSense {#extensions-php-intellisense}](#php-intellisense-extensions-php-intellisense)
-* [Visual Studio Code Tip - Using xDebug](#visual-studio-code-tip-using-xdebug)
-    * [Installation](#installation)
-       * [Check if xdebug is loaded](#check-if-xdebug-is-loaded)
-    * [Visual Studio Code](#visual-studio-code)
-       * [Settings](#settings)
-       * [Use inside vscode](#use-inside-vscode)
 * [Tips](#tips)
     * [editorconfig](#editorconfig)
     * [Interface](#interface)
@@ -394,10 +394,96 @@ From the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>), you can di
 
 ![PHP-Unit](./020-working-with-code/040-phpunit/images/phpunit.png)
 
-
 #### Extensions {#phpunit-extensions}
 
 Also see the [Better PHPUnit](#extensions-php-better-phpunit) extension.
+
+<!-- below, content of ./020-working-with-code/045-xdebug/readme.md -->
+
+### Using xDebug {#xdebug}
+
+URL: [https://xdebug.org](https://xdebug.org/)
+
+> [Tutorial](https://scotch.io/@chenster/debugging-php-in-visual-studio-code205)
+
+#### Installation
+
+* Open `http://localhost/?phpinfo=1` and make <kbd>CTRL</kbd>-<kbd>A</kbd>/<kbd>CTRL</kbd>-<kbd>C</kbd>
+* Open `https://xdebug.org/wizard.php` and <kbd>CTRL</kbd><kbd>V</kbd> there
+* Click on the `Analyse my phpinfo() output` button
+
+Follow installation steps:
+
+* download the suggested `.dll`,
+* save the file in the mentioned location,
+* edit `php.ini` and add the reference to the `.dll`
+* **extra step**: add the two lines below in the `php.ini` in the `[xdebug]` section
+
+```ini
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+```
+
+* save the file
+* restart the webserver
+
+**The two variables below are important and should be initialized to 1 otherwise xdebug will not stop the code on breakpoints.**
+
+##### Check if xdebug is loaded
+
+* Open `http://localhost/?phpinfo=1` once more
+* Search for `xdebug`. A  **xdebug** table should be there with a lot of keys/values.
+
+#### Visual Studio Code
+
+Tutorial by Microsoft: `https://code.visualstudio.com/docs/editor/debugging#_launch-configurations`
+
+* Install the [PHP Debug](https://marketplace.visualstudio.com/itemdetails?itemName=felixfbecker.php-debug) extension
+* Click on the `bug` button ![Visual Studio - Debug](./020-working-with-code/045-xdebug/images/xdebug_visual_studio.png)
+* Click on the ![Visual Studio - Debug](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_add_configuration.png) dropdown
+* Select `Add configuration` and select `PHP` as language
+* A list of options can be configured, the list is here: `https://marketplace.visualstudio.com/itemdetails?itemName=felixfbecker.php-debug#supported-launch.json-settings`
+
+##### Settings
+
+Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who make possible to ignore certain files from a debugger perspective. Here, ask to not go into vendors scripts (and stay in our own scripts):
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "ignore": [
+                "**/vendor/**/*.php"
+            ]
+        }
+    ]
+}
+```
+
+##### Use inside vscode
+
+Open your PHP file and add breakpoints. To do so, click on the line in your code where you want that the browser needs to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
+
+![Red bullet](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_breakpoints.png)
+
+Then, once your breakpoints are in place, click on the `Debug` menu and click then on `Start Debugging`. You'll see an orange panel like the following one:
+
+![xDebug is running](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_is_running.png)
+
+You'll also have a new toolbar:
+
+![xDebug toolbar](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_buttons.png)
+
+Now, go back to your web browser and refresh your URL without any change; if your breakpoints are correctly initialized, the browser will be on *pause* and Visual Studio Code will activate the first met breakpoint.
+
+![xDebug has stopped the execution](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_debugging.png)
+
+Use <kbd>F10</kbd> to go to the next instruction or <kbd>F11</kbd> to set into the next instruction (if the instruction is a function, go inside the function).
 
 <!-- below, content of ./020-working-with-code/050-php-formatting/readme.md -->
 
@@ -446,11 +532,11 @@ The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: doubl
 
 I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
 
-<!-- below, content of ./050-settings/readme.md -->
+<!-- below, content of ./060-settings/readme.md -->
 
 ## Some settings {#settings}
 
-<!-- below, content of ./050-settings/editor/readme.md -->
+<!-- below, content of ./060-settings/editor/readme.md -->
 
 ### Editor settings {#settings-editor}
 
@@ -518,7 +604,7 @@ Spécifie la taille d'une tabulation :
 }
 ```
 
-<!-- below, content of ./050-settings/files/readme.md -->
+<!-- below, content of ./060-settings/files/readme.md -->
 
 ### Files settings {#settings-files}
 
@@ -564,7 +650,7 @@ If you don't want to see certain files / folders in your :
 }
 ```
 
-<!-- below, content of ./050-settings/search/redme.md -->
+<!-- below, content of ./060-settings/search/redme.md -->
 
 ### Search settings {#settings-search}
 
@@ -580,7 +666,7 @@ If you want the search feature to ignore certain files / folders :
 }
 ```
 
-<!-- below, content of ./050-settings/telemetry/readme.md -->
+<!-- below, content of ./060-settings/telemetry/readme.md -->
 
 ### Telemetry settings {#settings-telemetry}
 
@@ -593,7 +679,7 @@ Disables telemetry to Microsoft:
 }
 ```
 
-<!-- below, content of ./050-settings/window/readme.md -->
+<!-- below, content of ./060-settings/window/readme.md -->
 
 ### Window settings {#settings-window}
 
@@ -615,7 +701,7 @@ Changes the zoom level:
 }
 ```
 
-<!-- below, content of ./050-settings/workbench/readme.md -->
+<!-- below, content of ./060-settings/workbench/readme.md -->
 
 ### Workbench settings {#settings-workbench}
 
@@ -635,7 +721,7 @@ Stop displaying the status bar that appears at the bottom of the screen :
 }
 ```
 
-<!-- below, content of ./060-extensions/readme.md -->
+<!-- below, content of ./070-extensions/readme.md -->
 
 ## Extensions {#extensions}
 
@@ -643,11 +729,11 @@ Some extensions that will be useful for any PHP developer.
 
 Note: to get the list of already installed extensions, press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>X</kbd> and type `@installed` in the text box to get the list.
 
-<!-- below, content of ./060-extensions/core/readme.md -->
+<!-- below, content of ./070-extensions/core/readme.md -->
 
 ### Extend core features of Visual Studio Code {#extensions-core}
 
-<!-- below, content of ./060-extensions/core/active_file/readme.md -->
+<!-- below, content of ./070-extensions/core/active_file/readme.md -->
 
 #### Active File In StatusBar {#extensions-active-file-statusbar}
 
@@ -655,9 +741,9 @@ Note: to get the list of already installed extensions, press <kbd>CTRL</kbd>-<kb
 
 Displays the full name of the file being edited at the bottom of the screen and allows, for example, to copy/paste its name by clicking on it.
 
-![Active file in status bar](./060-extensions/core/active_file/images/ActiveFileInStatusBar.gif)
+![Active file in status bar](./070-extensions/core/active_file/images/ActiveFileInStatusBar.gif)
 
-<!-- below, content of ./060-extensions/core/autofold/readme.md -->
+<!-- below, content of ./070-extensions/core/autofold/readme.md -->
 
 #### Autofold {#extensions-autofold}
 
@@ -669,9 +755,9 @@ The level (collapse all, from the second, third, ... level) can be configured fo
 
 Here is a sample: by opening that source file, comment's and function's code is collapse automatically, we've directly a better view on what that file is doing.
 
-![Autofold](./060-extensions/core/autofold/images/autofold.png)
+![Autofold](./070-extensions/core/autofold/images/autofold.png)
 
-<!-- below, content of ./060-extensions/core/better-comments/readme.md -->
+<!-- below, content of ./070-extensions/core/better-comments/readme.md -->
 
 #### Better comments {#extensions-better-comments}
 
@@ -679,9 +765,9 @@ Here is a sample: by opening that source file, comment's and function's code is 
 
 The Better Comments extension will help you create more human-friendly comments in your code.
 
-![Better comments](./060-extensions/core/better-comments/images/better-comments.png)
+![Better comments](./070-extensions/core/better-comments/images/better-comments.png)
 
-<!-- below, content of ./060-extensions/core/bookmarks/readme.md -->
+<!-- below, content of ./070-extensions/core/bookmarks/readme.md -->
 
 #### Bookmarks {#extensions-bookmarks}
 
@@ -689,7 +775,7 @@ The Better Comments extension will help you create more human-friendly comments 
 
 Allows you to put files in a Bookmark folder, displayed in the icon bar on the left. This allows you to jump very quickly to a file, to a specific line (which would have been bookmarked).
 
-<!-- below, content of ./060-extensions/core/bracket-pair-colorizer/readme.md -->
+<!-- below, content of ./070-extensions/core/bracket-pair-colorizer/readme.md -->
 
 #### Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}
 
@@ -697,9 +783,9 @@ Allows you to put files in a Bookmark folder, displayed in the icon bar on the l
 
 Uses different colors in the editor to properly identify brackets and opening / closing braces.
 
-![Bracket Pair Colorizer](./060-extensions/core/bracket-pair-colorizer/images/example.png)
+![Bracket Pair Colorizer](./070-extensions/core/bracket-pair-colorizer/images/example.png)
 
-<!-- below, content of ./060-extensions/core/code-spell-checker/readme.md -->
+<!-- below, content of ./070-extensions/core/code-spell-checker/readme.md -->
 
 #### Code Spell Checker {#extensions-code-spell-checker}
 
@@ -709,9 +795,9 @@ A basic spell checker that works well with camelCase code.
 
 The goal of this spell checker is to help catch common spelling errors while keeping the number of false positives low.
 
-![Code Spell Checker](./060-extensions/core/code-spell-checker/images/example.gif)
+![Code Spell Checker](./070-extensions/core/code-spell-checker/images/example.gif)
 
-<!-- below, content of ./060-extensions/core/favorites/readme.md -->
+<!-- below, content of ./070-extensions/core/favorites/readme.md -->
 
 #### Favorites {#extensions-favorites}
 
@@ -719,9 +805,9 @@ The goal of this spell checker is to help catch common spelling errors while kee
 
 Allows you to group shortcuts to files that, for example, you often have to open.
 
-![Favorites](./060-extensions/core/favorites/images/favorites.jpg)
+![Favorites](./070-extensions/core/favorites/images/favorites.jpg)
 
-<!-- below, content of ./060-extensions/core/gitlens/readme.md -->
+<!-- below, content of ./070-extensions/core/gitlens/readme.md -->
 
 #### Gitlens {#extensions-gitlens}
 
@@ -729,13 +815,13 @@ Allows you to group shortcuts to files that, for example, you often have to open
 
 Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more
 
-![GitLens](./060-extensions/core/gitlens/images/gitlens-preview.gif)
+![GitLens](./070-extensions/core/gitlens/images/gitlens-preview.gif)
 
-<!-- below, content of ./060-extensions/core/highlight/readme.md -->
+<!-- below, content of ./070-extensions/core/highlight/readme.md -->
 
 #### Colouring of source codes according to the language {#extensions-highlight}
 
-<!-- below, content of ./060-extensions/core/highlight/apache/readme.md -->
+<!-- below, content of ./070-extensions/core/highlight/apache/readme.md -->
 
 ##### Apache configuration file {#highlight-apache}
 
@@ -743,9 +829,9 @@ Supercharge the Git capabilities built into Visual Studio Code — Visualize cod
 
 Support (coloring) Apache files such as `.htaccess`, `.htpasswd`, `.conf` and `.htgroups`.
 
-![Apache coloring](./060-extensions/core/highlight/apache/images/apache.png)
+![Apache coloring](./070-extensions/core/highlight/apache/images/apache.png)
 
-<!-- below, content of ./060-extensions/core/highlight/log-file-highlighter/readme.md -->
+<!-- below, content of ./070-extensions/core/highlight/log-file-highlighter/readme.md -->
 
 ##### Log File Highlighter {#extensions_log-file-highlighter}
 
@@ -753,9 +839,9 @@ Support (coloring) Apache files such as `.htaccess`, `.htpasswd`, `.conf` and `.
 
 Log file highlight.
 
-![logfile_highlight.png](./060-extensions/core/highlight/log-file-highlighter/images/logfile_highlight.png)
+![logfile_highlight.png](./070-extensions/core/highlight/log-file-highlighter/images/logfile_highlight.png)
 
-<!-- below, content of ./060-extensions/core/prettier-vscode/readme.md -->
+<!-- below, content of ./070-extensions/core/prettier-vscode/readme.md -->
 
 #### Prettier {#extensions-prettier-vscode}
 
@@ -763,7 +849,7 @@ Log file highlight.
 
 Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 
-<!-- below, content of ./060-extensions/core/project-manager/readme.md -->
+<!-- below, content of ./070-extensions/core/project-manager/readme.md -->
 
 #### Project Manager {#extensions-project-manager}
 
@@ -771,9 +857,9 @@ Prettier is an opinionated code formatter. It enforces a consistent style by par
 
 Easily switch between projects.
 
-![Project Manager](./060-extensions/core/project-manager/images/project-manager-list-sort-by-name.png)
+![Project Manager](./070-extensions/core/project-manager/images/project-manager-list-sort-by-name.png)
 
-<!-- below, content of ./060-extensions/core/select-highlight-minimap/readme.md -->
+<!-- below, content of ./070-extensions/core/select-highlight-minimap/readme.md -->
 
 #### Select highlight in minimap {#extensions-select-highlight-minimap}
 
@@ -781,9 +867,9 @@ Easily switch between projects.
 
 Highlights the selected code (e.g. a function name) in the minimap so that you can quickly identify where in the currently edited file the same function is called.
 
-![Select highlight in minimap](./060-extensions/core/select-highlight-minimap/images/ide.png)
+![Select highlight in minimap](./070-extensions/core/select-highlight-minimap/images/ide.png)
 
-<!-- below, content of ./060-extensions/core/snippet-creator/readme.md -->
+<!-- below, content of ./070-extensions/core/snippet-creator/readme.md -->
 
 #### Snippet-creator {#extensions-snippet-creator}
 
@@ -791,7 +877,7 @@ The [snippet-creator](https://marketplace.visualstudio.com/items?itemName=nikita
 
 *Note: the extension is actually deprecated (may 2020).*
 
-<!-- below, content of ./060-extensions/core/sort-lines/readme.md -->
+<!-- below, content of ./070-extensions/core/sort-lines/readme.md -->
 
 #### Sort lines {#extensions-sort-lines}
 
@@ -799,9 +885,9 @@ The [snippet-creator](https://marketplace.visualstudio.com/items?itemName=nikita
 
 Sorts lines of text.
 
-![Sort lines](./060-extensions/core/sort-lines/images/usage-animation.gif)
+![Sort lines](./070-extensions/core/sort-lines/images/usage-animation.gif)
 
-<!-- below, content of ./060-extensions/core/surround/readme.md -->
+<!-- below, content of ./070-extensions/core/surround/readme.md -->
 
 #### Surround {#extensions-surround}
 
@@ -809,9 +895,9 @@ Sorts lines of text.
 
 On sélectionne un bloc de lignes de code puis, grâce à Surround, on peut l'inclure dans un `if/else`, `try/catch`, ... L'outil fait lui-même l'indentation du code.
 
-![VS Code - Surround](./060-extensions/core/surround/images/demo.gif)
+![VS Code - Surround](./070-extensions/core/surround/images/demo.gif)
 
-<!-- below, content of ./060-extensions/core/Syncing/readme.md -->
+<!-- below, content of ./070-extensions/core/Syncing/readme.md -->
 
 #### Syncing {#extensions-syncing}
 
@@ -819,7 +905,7 @@ On sélectionne un bloc de lignes de code puis, grâce à Surround, on peut l'in
 
 Synchronize all of your VSCode settings across multiple devices.
 
-<!-- below, content of ./060-extensions/core/todo-tree/readme.md -->
+<!-- below, content of ./070-extensions/core/todo-tree/readme.md -->
 
 #### Todo Tree {#extensions-todo-tree}
 
@@ -827,9 +913,9 @@ Synchronize all of your VSCode settings across multiple devices.
 
 Displays an icon on the left side of the screen, in the form of a tree, which allows you to find, in one place, the list of TODOs that you have to make, i.e. comments beginning with `// TODO` that have been encoded in the source files.
 
-![Todo Tree](./060-extensions/core/todo-tree/images/screenshot.png)
+![Todo Tree](./070-extensions/core/todo-tree/images/screenshot.png)
 
-<!-- below, content of ./060-extensions/core/vscode-icons/readme.md -->
+<!-- below, content of ./070-extensions/core/vscode-icons/readme.md -->
 
 #### vscode-icons {#extensions-vscode-icons}
 
@@ -837,13 +923,13 @@ Displays an icon on the left side of the screen, in the form of a tree, which al
 
 Adapt the tree-view with the list of files to use an icon associated to the type of file (css, html, php, ...)
 
-![VS Code Icons](./060-extensions/core/vscode-icons/images/screenshot.gif)
+![VS Code Icons](./070-extensions/core/vscode-icons/images/screenshot.gif)
 
-<!-- below, content of ./060-extensions/javascript/readme.md -->
+<!-- below, content of ./070-extensions/javascript/readme.md -->
 
 ### Javascript {#extensions-javascript}
 
-<!-- below, content of ./060-extensions/javascript/eslint/readme.md -->
+<!-- below, content of ./070-extensions/javascript/eslint/readme.md -->
 
 #### ESLint {#extensions-eslint}
 
@@ -851,11 +937,11 @@ Adapt the tree-view with the list of files to use an icon associated to the type
 
 Javascript linter
 
-<!-- below, content of ./060-extensions/markdown/readme.md -->
+<!-- below, content of ./070-extensions/markdown/readme.md -->
 
 ### Markdown {#extensions-markdown}
 
-<!-- below, content of ./060-extensions/markdown/markdown-all-in-one/readme.md -->
+<!-- below, content of ./070-extensions/markdown/markdown-all-in-one/readme.md -->
 
 #### Markdown All in One {#extensions-markdown-all-in-one}
 
@@ -863,7 +949,7 @@ Javascript linter
 
 Implements keyboard shortcuts for the Markdown language, allows the generation of tables of contents, preview, ...
 
-<!-- below, content of ./060-extensions/markdown/markdown-lint/readme.md -->
+<!-- below, content of ./070-extensions/markdown/markdown-lint/readme.md -->
 
 #### Markdownlint {#extensions-markdownlint}
 
@@ -908,11 +994,11 @@ Set your custom rules:
 }
 ```
 
-<!-- below, content of ./060-extensions/php/readme.md -->
+<!-- below, content of ./070-extensions/php/readme.md -->
 
 ### PHP {#extensions-php}
 
-<!-- below, content of ./060-extensions/php/better-phpunit/readme.md -->
+<!-- below, content of ./070-extensions/php/better-phpunit/readme.md -->
 
 #### Better PHPUnit {#extensions-php-better-phpunit}
 
@@ -920,7 +1006,7 @@ Set your custom rules:
 
 Better PHPUnit is the most popular, cleanest, and fastest PHPUnit runner for VS Code.
 
-![Better PHPUnit](./060-extensions/php/better-phpunit/images/demo.gif)
+![Better PHPUnit](./070-extensions/php/better-phpunit/images/demo.gif)
 
 ##### Run a test method
 
@@ -943,7 +1029,7 @@ Better PHPUnit is the most popular, cleanest, and fastest PHPUnit runner for VS 
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
 * Select: `Better PHPUnit: run previous` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd>)
 
-<!-- below, content of ./060-extensions/php/intelephense/readme.md -->
+<!-- below, content of ./070-extensions/php/intelephense/readme.md -->
 
 #### PHP intelephense {#extensions-php-intelephense}
 
@@ -958,7 +1044,7 @@ After installation, we need to disable the built-in PHP feature of VSCode.
 3. Select `PHP Language Features`
 4. Disable it.
 
-<!-- below, content of ./060-extensions/php/laravel-blade/readme.md -->
+<!-- below, content of ./070-extensions/php/laravel-blade/readme.md -->
 
 #### Laravel Blade Snippets {#extensions-laravel-blade}
 
@@ -966,7 +1052,7 @@ After installation, we need to disable the built-in PHP feature of VSCode.
 
 Helper for working with Laravel Blade templates.
 
-<!-- below, content of ./060-extensions/php/php-cs-fixer/readme.md -->
+<!-- below, content of ./070-extensions/php/php-cs-fixer/readme.md -->
 
 #### PHP-CS-FIXER {#extensions-php-cs-fixer}
 
@@ -980,7 +1066,7 @@ Note: you can add PHP-CS-FIXER as a global dependency (thus for all your project
 
 php-cs-fixer is using a `.php-cs` file for his configuration; there are a lot of items that can be configured. See [https://github.com/FriendsOfPHP/PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) for more information's.
 
-<!-- below, content of ./060-extensions/php/php-docblocker/readme.md -->
+<!-- below, content of ./070-extensions/php/php-docblocker/readme.md -->
 
 #### PHP DocBlocker {#extensions-php-docblocker}
 
@@ -988,7 +1074,7 @@ php-cs-fixer is using a `.php-cs` file for his configuration; there are a lot of
 
 Allows to generate documentation blocks of classes, methods, ...
 
-<!-- below, content of ./060-extensions/php/php-extension-pack/reame.md -->
+<!-- below, content of ./070-extensions/php/php-extension-pack/reame.md -->
 
 #### PHP Extension Pack {#extensions-php-extension-pack}
 
@@ -996,7 +1082,7 @@ Allows to generate documentation blocks of classes, methods, ...
 
 Includes the most important extensions to get you started with PHP development in Visual Studio Code.
 
-<!-- below, content of ./060-extensions/php/php-intellisense/readme.md -->
+<!-- below, content of ./070-extensions/php/php-intellisense/readme.md -->
 
 #### PHP IntelliSense {#extensions-php-intellisense}
 
@@ -1004,94 +1090,7 @@ Includes the most important extensions to get you started with PHP development i
 
 Advanced PHP IntelliSense for Visual Studio Code.
 
-![PHP IntelliSense](./060-extensions/php/php-intellisense/images/signatureHelp.gif)
-
-<!-- below, content of ./070-xdebug/readme.md -->
-
-## Visual Studio Code Tip - Using xDebug
-
-URL: [https://xdebug.org](https://xdebug.org/)
-
-> [Tutorial](https://scotch.io/@chenster/debugging-php-in-visual-studio-code205)
-
-### Installation
-
-* Open `http://localhost/?phpinfo=1` and make <kbd>CTRL</kbd>-<kbd>A</kbd>/<kbd>CTRL</kbd>-<kbd>C</kbd>
-* Open `https://xdebug.org/wizard.php` and <kbd>CTRL</kbd><kbd>V</kbd> there
-* Click on the `Analyse my phpinfo() output` button
-
-Follow installation steps:
-
-* download the suggested `.dll`,
-* save the file in the mentioned location,
-* edit `php.ini` and add the reference to the `.dll`
-* **extra step**: add the two lines below in the `php.ini` in the `[xdebug]` section
-
-```ini
-xdebug.remote_enable = 1
-xdebug.remote_autostart = 1
-```
-
-* save the file
-* restart the webserver
-
-**The two variables below are important and should be initialized to 1 otherwise xdebug will not stop the code on breakpoints.**
-
-#### Check if xdebug is loaded
-
-* Open `http://localhost/?phpinfo=1` once more
-* Search for `xdebug`. A  **xdebug** table should be there with a lot of keys/values.
-
-### Visual Studio Code
-
-Tutorial by Microsoft: `https://code.visualstudio.com/docs/editor/debugging#_launch-configurations`
-
-* Install the [PHP Debug](https://marketplace.visualstudio.com/itemdetails?itemName=felixfbecker.php-debug) extension
-* Click on the `bug` button ![Visual Studio - Debug](./070-xdebug/images/xdebug_visual_studio.png)
-* Click on the ![Visual Studio - Debug](./070-xdebug/images/xdebug_visual_studio_add_configuration.png) dropdown
-* Select `Add configuration` and select `PHP` as language
-* A list of options can be configured, the list is here: `https://marketplace.visualstudio.com/itemdetails?itemName=felixfbecker.php-debug#supported-launch.json-settings`
-
-#### Settings
-
-Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who make possible to ignore certain files from a debugger perspective. Here, ask to not go into vendors scripts (and stay in our own scripts):
-
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "port": 9000,
-            "ignore": [
-                "**/vendor/**/*.php"
-            ]
-        }
-    ]
-}
-```
-
-#### Use inside vscode
-
-Open your PHP file and add breakpoints. To do so, click on the line in your code where you want that the browser needs to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
-
-![Red bullet](./070-xdebug/images/xdebug_visual_studio_breakpoints.png)
-
-Then, once your breakpoints are in place, click on the `Debug` menu and click then on `Start Debugging`. You'll see an orange panel like the following one:
-
-![xDebug is running](./070-xdebug/images/xdebug_visual_studio_is_running.png)
-
-You'll also have a new toolbar:
-
-![xDebug toolbar](./070-xdebug/images/xdebug_visual_studio_buttons.png)
-
-Now, go back to your web browser and refresh your URL without any change; if your breakpoints are correctly initialized, the browser will be on *pause* and Visual Studio Code will activate the first met breakpoint.
-
-![xDebug has stopped the execution](./070-xdebug/images/xdebug_visual_studio_debugging.png)
-
-Use <kbd>F10</kbd> to go to the next instruction or <kbd>F11</kbd> to set into the next instruction (if the instruction is a function, go inside the function).
+![PHP IntelliSense](./070-extensions/php/php-intellisense/images/signatureHelp.gif)
 
 <!-- below, content of ./080-tips/readme.md -->
 

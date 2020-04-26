@@ -4,7 +4,6 @@ From the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>), you can di
 
 ![PHP-Unit](./images/phpunit.png)    
 
-
 ## Extensions {#phpunit-extensions}
 
 Also see the [Better PHPUnit](#extensions-php-better-phpunit) extension.

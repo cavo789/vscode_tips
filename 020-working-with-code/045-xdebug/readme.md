@@ -1,4 +1,4 @@
-# Visual Studio Code Tip - Using xDebug
+# Using xDebug {#xdebug}
 
 URL: [https://xdebug.org](https://xdebug.org/)
 
