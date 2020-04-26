@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "kbd",
+        "phpunit"
+    ],
+    "markdownlint.run": "onSave",
+    "markdownlint.customRules": [],
+}

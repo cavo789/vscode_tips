@@ -1,0 +1,42 @@
+{
+    "Terminal-shortcut": {
+        "scope": "markdown",
+        "prefix": "terminal",
+        "body": [
+            "`Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>)"
+        ],
+        "description": "Show Terminal keyboad Shortcut"
+    },
+    "Command-palette-shortcut": {
+        "scope": "markdown",
+        "prefix": "command",
+        "body": [
+            "`Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>)"
+        ],
+        "description": "Show Command Palette Shortcut"
+    },
+    "PHP-CS-FIXER-shortcut": {
+        "scope": "markdown",
+        "prefix": "fixer",
+        "body": [
+            "`Fix this file` (<kbd>ALT</kbd>-<kbd>SHIFT</kbd>-<kbd>F</kbd>)"
+        ],
+        "description": "Show the Fix this file Shortcut"
+    },
+    "User settings shortcut": {
+        "scope": "markdown",
+        "prefix": "user",
+        "body": [
+            "`User Settings` (<kbd>CTRL</kbd>-<kbd>,</kbd>)"
+        ],
+        "description": "Show the User Setting Shortcut"
+    },
+    "Developer tools shortcut": {
+        "scope": "markdown",
+        "prefix": "developer",
+        "body": [
+            "`Developer Tools` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>I</kbd>) in the `Help` menu"
+        ],
+        "description": "Show the Developer Tools Shortcut"
+    },
+}

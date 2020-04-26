@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-04-25 22:24:44 -->
+<!-- Last refresh date: 2020-04-26 11:49:25 -->
 
 <!-- below, content of ./index.md -->
 
@@ -23,16 +23,28 @@
        * [Keyboard shortcuts {#traversal-shortcuts}](#keyboard-shortcuts-traversal-shortcuts)
        * [Select first {#traversal-select-first}](#select-first-traversal-select-first)
     * [Snippets {#snippets}](#snippets-snippets)
-       * [Built-in {#snippets-built-in}](#built-in-snippets-built-in)
-       * [User defined ones {#snippets-user-defined}](#user-defined-ones-snippets-user-defined)
-       * [Make snippets configurable {#snippets-user-placeholders}](#make-snippets-configurable-snippets-user-placeholders)
-       * [Using variables](#using-variables)
-       * [Settings {#snippets-settings}](#settings-snippets-settings)
-       * [Extensions {#snippets-extensions}](#extensions-snippets-extensions)
+       * [Global {#snippets-global}](#global-snippets-global)
+          * [Built-in {#snippets-built-in}](#built-in-snippets-built-in)
+          * [User defined ones {#snippets-user-defined}](#user-defined-ones-snippets-user-defined)
+          * [Make snippets configurable {#snippets-user-placeholders}](#make-snippets-configurable-snippets-user-placeholders)
+          * [Using variables](#using-variables)
+          * [Settings {#snippets-settings}](#settings-snippets-settings)
+          * [Extensions {#snippets-extensions}](#extensions-snippets-extensions)
+       * [Project-based {#snippets-project-based}](#project-based-snippets-project-based)
     * [Using the built-in terminal {#terminal}](#using-the-built-in-terminal-terminal)
 * [Working with code {#working-with-code}](#working-with-code-working-with-code)
-    * [Code folding {#{#working-with-code-folding}](#code-folding-working-with-code-folding)
-    * [Comments {#working-with-code-comments}](#comments-working-with-code-comments)
+    * [Keyboard shortcuts {#working-with-code-shortcuts}](#keyboard-shortcuts-working-with-code-shortcuts)
+       * [Code folding {#working-with-code-folding}](#code-folding-working-with-code-folding)
+       * [Comments {#working-with-code-comments}](#comments-working-with-code-comments)
+    * [Integrated GIT {#integrated-git}](#integrated-git-integrated-git)
+       * [Using with the terminal {#integrated-git-terminal}](#using-with-the-terminal-integrated-git-terminal)
+       * [Source Control: GIT {#integrated-git-source-control}](#source-control:-git-integrated-git-source-control)
+       * [Extensions {#integrated-git-extensions}](#extensions-integrated-git-extensions)
+    * [Code definition](#code-definition)
+    * [PHP-Unit {#phpunit}](#php-unit-phpunit)
+       * [Extensions {#phpunit-extensions}](#extensions-phpunit-extensions)
+    * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
+    * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
 * [Some settings {#settings}](#some-settings-settings)
     * [Editor settings {#settings-editor}](#editor-settings-settings-editor)
     * [Files settings {#settings-files}](#files-settings-settings-files)
@@ -49,6 +61,7 @@
        * [Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}](#bracket-pair-colorizer-extensions-bracket-pair-colorizer)
        * [Code Spell Checker {#extensions-code-spell-checker}](#code-spell-checker-extensions-code-spell-checker)
        * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
+       * [Gitlens {#extensions-gitlens}](#gitlens-extensions-gitlens)
        * [Colouring of source codes according to the language {#extensions-highlight}](#colouring-of-source-codes-according-to-the-language-extensions-highlight)
           * [Apache configuration file {#highlight-apache}](#apache-configuration-file-highlight-apache)
           * [Log File Highlighter {#extensions_log-file-highlighter}](#log-file-highlighter-extensions_log-file-highlighter)
@@ -68,6 +81,11 @@
        * [Markdownlint {#extensions-markdownlint}](#markdownlint-extensions-markdownlint)
           * [Configuration {#extensions-markdownlint-configuration}](#configuration-extensions-markdownlint-configuration)
     * [PHP {#extensions-php}](#php-extensions-php)
+       * [Better PHPUnit {#extensions-php-better-phpunit}](#better-phpunit-extensions-php-better-phpunit)
+          * [Run a test method](#run-a-test-method)
+          * [Run a test file](#run-a-test-file)
+          * [Run the entire suite](#run-the-entire-suite)
+          * [Run the previous test](#run-the-previous-test)
        * [PHP intelephense {#extensions-php-intelephense}](#php-intelephense-extensions-php-intelephense)
           * [Configuration {#extensions-php-intelephense-configuration}](#configuration-extensions-php-intelephense-configuration)
        * [Laravel Blade Snippets {#extensions-laravel-blade}](#laravel-blade-snippets-extensions-laravel-blade)
@@ -89,6 +107,8 @@
 * [Troubleshooting {#troubleshooting}](#troubleshooting-troubleshooting)
     * [Intelephense {#troubleshooting-intelephense}](#intelephense-troubleshooting-intelephense)
     * [Phan {#troubleshooting-phan}](#phan-troubleshooting-phan)
+    * [PHP-CS-FIXER {#troubleshooting-php-cs-fixer}](#php-cs-fixer-troubleshooting-php-cs-fixer)
+       * [PHP General Error {#troubleshooting-php-cs-fixer-php-general-error}](#php-general-error-troubleshooting-php-cs-fixer-php-general-error)
 * [License](#license)
 <!-- table-of-contents - end -->
 
@@ -108,12 +128,13 @@ The [Insiders version](https://code.visualstudio.com/insiders/) contains the ver
 
 ### The first keyboard shortcuts to learn {#discovering-shortcuts}
 
-* <kbd>CTRL</kbd>-<kbd>O</kbd> to open a file
+* <kbd>CTRL</kbd>-<kbd>O</kbd> to open a file.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>O</kbd> to open a folder (a project).
+* <kbd>CTRL</kbd>-<kbd>R</kbd> to show the list of recent folders (recent project).
 * <kbd>CTRL</kbd>-<kbd>P</kbd> to quickly retrieve and open a file in an open project.
 * <kbd>CTRL</kbd>-<kbd>O</kbd> to open a recent folder (a project).
 * <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>F</kbd> to open the `search` pane (when a project has been opened).
-* <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd> to open the `command palette` to quick access all commands of the editor.
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette` to quick access all commands of the editor.
 * <kbd>CTRL</kbd>-<kbd>,</kbd> to get access to the `User Settings`.
 * <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>X</kbd> to open the list of `Extensions`.
 * <kbd>CTRL</kbd>-<kbd>B</kbd> show/hide the left side-bar (if <kbd>CTRL</kbd>-<kbd>B</kbd> isn't used like in markdown files to set in bold).
@@ -161,7 +182,9 @@ Select the parent folder, right-click and select `New file` or `New folder`.
 
 ### Snippets {#snippets}
 
-#### Built-in {#snippets-built-in}
+#### Global {#snippets-global}
+
+##### Built-in {#snippets-built-in}
 
 Snippets are pieces of pre-programmed code (like a `try...catch...`) that allow you to generate code without typing it entirely.
 
@@ -169,7 +192,7 @@ Depending on the open file and its language (php, js, markdown, ...), *VSCode* w
 
 Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the Palette Command then type `Insert Snippet` to get the list of already existing snippets.
 
-#### User defined ones {#snippets-user-defined}
+##### User defined ones {#snippets-user-defined}
 
 It is however possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
 
@@ -198,7 +221,7 @@ Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check yo
 }
 ```
 
-#### Make snippets configurable {#snippets-user-placeholders}
+##### Make snippets configurable {#snippets-user-placeholders}
 
 Take a look on the following snippet and the `$1` and `$2` placeholders.
 
@@ -218,7 +241,7 @@ Take a look on the following snippet and the `$1` and `$2` placeholders.
 
 Save this snippet in your editor and, in a `php` file, type `vd` followed by <kbd>CTRL</kbd>-<kbd>space</kbd>. You'll get now three new lines and the cursor will be placed where the `$1` placeholder was. Type a PHP variable and press <kbd>TAB</kbd> and see, the cursor will be now immediately put where `$2` was located. Thanks these placeholders it's easy to foresee, in a snippet, locations where you need to type dynamic content like variables, custom text, ...
 
-#### Using variables
+##### Using variables
 
 When creating a snippet, we can f.i. use the current PHP filename. Imagine you've a file name `Customer.php` and there you wish to create a new class.
 
@@ -243,13 +266,38 @@ The `TM_FILENAME_BASE` variable will be replaced by VS Code to the filename *(wi
 
 See all variables here: [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)
 
-#### Settings {#snippets-settings}
+##### Settings {#snippets-settings}
 
 User snippets are stored in the `%APPDATA%\code\user\snippets` folder, one `.json` file by languages.
 
-#### Extensions {#snippets-extensions}
+##### Extensions {#snippets-extensions}
 
 Also see the [snippet-creator](#extensions-snippet-creator) extension.
+
+#### Project-based {#snippets-project-based}
+
+You can also define your snippets for your project and not globally. You can then share snippets with your colleagues f.i.
+
+1. In the root folder of your project, create a `.vscode` folder if not yet present;
+2. Create a file with the `.code-snippets` extension like `my-project.code-snippets`;
+3. You can configure your snippets there.
+
+Below an example from this `VSCode-Tips` project:
+
+```json
+{
+    "Terminal-shortcut": {
+        "scope": "markdown",
+        "prefix": "terminal",
+        "body": [
+            "`Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>)"
+        ],
+        "description": "Show Terminal keyboad Shortcuts"
+    }
+}
+```
+
+Now, each time I'll type `terminal` I can decide to immediately add the keyboard shortcuts; nice.
 
 <!-- below, content of ./010-first-approach/070-terminal/readme.md -->
 
@@ -269,7 +317,11 @@ Note: by clicking on the `+` button, we can create as many terminal we want.
 
 ## Working with code {#working-with-code}
 
-### Code folding {#{#working-with-code-folding}
+<!-- below, content of ./020-working-with-code/010-keyboard-shortcuts/readme.md -->
+
+### Keyboard shortcuts {#working-with-code-shortcuts}
+
+#### Code folding {#working-with-code-folding}
 
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>à</kbd> to collapse all functions, headings, ... The same can be obtained by <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Fold all`.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>J</kbd> to expand all functions, headings, ... The same can be obtained by <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Unfold all`.
@@ -282,12 +334,117 @@ Note: by clicking on the `+` button, we can create as many terminal we want.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>è</kbd> - Collapse level 7.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>)</kbd> - Collapse the bloc where the cursor is located.
 
-### Comments {#working-with-code-comments}
+#### Comments {#working-with-code-comments}
 
 Select a bloc of lines then,
 
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>C</kbd> to put that bloc in comments (add `//` in front of each line).
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>U</kbd> to remove the comments (remove `//` in front of each line).
+
+<!-- below, content of ./020-working-with-code/020-integrated-git/readme.md -->
+
+### Integrated GIT {#integrated-git}
+
+#### Using with the terminal {#integrated-git-terminal}
+
+Once a project has been opened, you can get access to any git command by using the terminal. Open the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>).
+
+For instance, if the project has never been sent to git, you can initialize the repository like this:
+
+* Open the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>). You'll be placed in the root folder of the project;
+* `git init` to initialize your local repository;
+* `git add .` to add all files to the staging area of your repository. Visual Studio Code will change the color of any files and folders in the tree-view to reflect that files are now in the staging area and ready to be committed;
+* `git commit -m 'My initial commit'` to commit everything to the local repository. Color in the tree-view will be back in white (no more green) meaning that files are now placed in the repo.;
+
+If you now change a file by appending a new function, removing part of the code, changing a variable, ... VSCode will display a color (green, red, ...) in the left margin of the code editor reflecting the change.
+
+* `git status` in the `Terminal` will show the list of uncommitted changes.
+
+Note: You can get access to any GIT command in the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>).
+
+#### Source Control: GIT {#integrated-git-source-control}
+
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>G</kbd> will open the `Source Control: GIT` pane with the list of changes made to your source after the last `git add` command.
+
+From there it's easy to see what files have been modified and, file by file, discard changes if you want.
+
+#### Extensions {#integrated-git-extensions}
+
+Also see the [Gitlens](#extensions-gitlens) extension.
+
+<!-- below, content of ./020-working-with-code/030-code-definition/readme.md -->
+
+### Code definition
+
+By right-clicking on a variable, constant or method, we can get access to a few features like showing everywhere it's used.
+
+![Go to References](./020-working-with-code/030-code-definition/images/goto-references.png)
+
+* <kbd>SHIFT</kbd>-<kbd>F12</kbd> to show all references
+
+In the right area of the popup, we can navigate and click to see each portion of files.
+
+Press <kbd>F12</kbd> to jump in the definition of the method: click or select a method name like in `writeLog(...)` and press <kbd>F12</kbd> once the cursor is located on `writeLog` and you'll jump in the file that implement the method, the method source code will be displayed too.
+
+<!-- below, content of ./020-working-with-code/040-phpunit/readme.md -->
+
+### PHP-Unit {#phpunit}
+
+From the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>), you can directly run phpunit and the full suite of tests will be executed.
+
+![PHP-Unit](./020-working-with-code/040-phpunit/images/phpunit.png)
+
+
+#### Extensions {#phpunit-extensions}
+
+Also see the [Better PHPUnit](#extensions-php-better-phpunit) extension.
+
+<!-- below, content of ./020-working-with-code/050-php-formatting/readme.md -->
+
+### PHP Formatting {#php-formatting}
+
+If you already have installed [PHP intelephense](#extensions-php-intelephense), you can retrieve a `Format Document` command in the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>) but you can't really configure the rules (how the formatting should be done, tabs or spaces, removed unused classes, ...) and for this reason it's probably best to install [PHP-CS-FIXER]](#extensions-php-cs-fixer).
+
+Once installed, php-cs-fixer will add command like `Fix this file` (<kbd>ALT</kbd>-<kbd>SHIFT</kbd>-<kbd>F</kbd>).
+
+php-cs-fixer can be configured globally (in the `User Settings` (<kbd>CTRL</kbd>-<kbd>,</kbd>)) or for the Workspace (in this case, create or edit the `/.vscode/settings.json` file in your project).
+
+```json
+{
+    "php-cs-fixer.executablePath": "php-cs-fixer",
+    "php-cs-fixer.executablePathWindows": "",
+    "php-cs-fixer.onsave": false,
+    "php-cs-fixer.rules": "@PSR2",
+    "php-cs-fixer.config": ".php_cs;.php_cs.dist",
+    "php-cs-fixer.allowRisky": false,
+    "php-cs-fixer.pathMode": "override",
+    "php-cs-fixer.exclude": [],
+    "php-cs-fixer.autoFixByBracket": true,
+    "php-cs-fixer.autoFixBySemicolon": false,
+    "php-cs-fixer.formatHtml": false,
+    "php-cs-fixer.documentFormattingProvider": true
+}
+```
+
+By creating a `.php-cs` file in your root folder, php-cs-fixer will apply rules defined in that file.
+
+<!-- below, content of ./020-working-with-code/060-multiple-cursors/readme.md -->
+
+### Multiple cursors {#multiple-cursors}
+
+VSCode supports multiple cursors: click here and there and there but just press the <kbd>CTRL</kbd> key after the first click.
+
+You'll then have more than one cursor and starting type will do it in any places where a cursor was displayed.
+
+For instance, you've a list of public functions, click before each `p` of public functions, press the delete key to remove the `public` word, it'll be done for all functions at a time and type now `private`.
+
+You can also have an enumeration list, one word on each line. Click before each letter and then type `*` to add a bullet before each item.
+
+Really convenient.
+
+The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: double-click on, f.i., the `public` word to select the first occurrence. Press <kbd>CTRL</kbd>-<kbd>D</kbd> to select the second, the third, and so on. Press <kbd>CTRL</kbd>-<kbd>D</kbd> again and again to select all occurrences. Then type `private` f.i. to overwrite selections and replace by the new word.
+
+I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
 
 <!-- below, content of ./050-settings/readme.md -->
 
@@ -564,6 +721,16 @@ Allows you to group shortcuts to files that, for example, you often have to open
 
 ![Favorites](./060-extensions/core/favorites/images/favorites.jpg)
 
+<!-- below, content of ./060-extensions/core/gitlens/readme.md -->
+
+#### Gitlens {#extensions-gitlens}
+
+> [https://github.com/eamodio/vscode-gitlens](https://github.com/eamodio/vscode-gitlens)
+
+Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more
+
+![GitLens](./060-extensions/core/gitlens/images/gitlens-preview.gif)
+
 <!-- below, content of ./060-extensions/core/highlight/readme.md -->
 
 #### Colouring of source codes according to the language {#extensions-highlight}
@@ -708,16 +875,20 @@ You can configure markdownlint to ignore some files or some rules.
 
 The list of rules can be retrieved from [https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md).
 
-To ignore f.i. the rule MD041, just add the following configuration in your `settings.json` file:
+To ignore f.i. rules `MD033` and `MD041`, just add the following configuration in your `settings.json` file:
 
+```json
 {
     "markdownlint.config": {
+        "MD033": false,
         "MD041": false
     }
 }
+```
 
 To ignore files use the `ignore` key:
 
+```json
 {
     "markdownlint.config": {
         "ignore": [
@@ -725,18 +896,52 @@ To ignore files use the `ignore` key:
         ]
     }
 }
+```
 
 Set your custom rules:
 
+```json
 {
     "markdownlint.customRules": [
         "C:\\Christophe\\.config\\.markdownlint.json"
     ]
 }
+```
 
 <!-- below, content of ./060-extensions/php/readme.md -->
 
 ### PHP {#extensions-php}
+
+<!-- below, content of ./060-extensions/php/better-phpunit/readme.md -->
+
+#### Better PHPUnit {#extensions-php-better-phpunit}
+
+> [https://github.com/calebporzio/better-phpunit](https://github.com/calebporzio/better-phpunit)
+
+Better PHPUnit is the most popular, cleanest, and fastest PHPUnit runner for VS Code.
+
+![Better PHPUnit](./060-extensions/php/better-phpunit/images/demo.gif)
+
+##### Run a test method
+
+* Place your cursor in/on the method you want to run
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
+* Select: `Better PHPUnit: run` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>R</kbd>)
+
+##### Run a test file
+
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
+* Select: `Better PHPUnit: run-file` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>F</kbd>)
+
+##### Run the entire suite
+
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
+* Select: `Better PHPUnit: run suite`
+
+##### Run the previous test
+
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
+* Select: `Better PHPUnit: run previous` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd>)
 
 <!-- below, content of ./060-extensions/php/intelephense/readme.md -->
 
@@ -768,6 +973,12 @@ Helper for working with Laravel Blade templates.
 > [https://marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer](https://marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer)
 
 Automatic correction of the quality of PHP code formatting thanks to quality standards (e.g. PSR2), which can be overloaded through a configuration file.
+
+Once installed, go to the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>) and select `php-cs-fixer: fix this file` to correctly format the file.
+
+Note: you can add PHP-CS-FIXER as a global dependency (thus for all your projects) by running `composer require friendsofphp/php-cs-fixer global` on the command line.
+
+php-cs-fixer is using a `.php-cs` file for his configuration; there are a lot of items that can be configured. See [https://github.com/FriendsOfPHP/PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) for more information's.
 
 <!-- below, content of ./060-extensions/php/php-docblocker/readme.md -->
 
@@ -988,6 +1199,22 @@ Make sure to specify in your `settings.json` file the PHP version you're using:
 That version should match the one you've defined in the `PHPBIN` environment variable:
 
 ![PHPBIN](./090-troubleshooting/phan/images/phpbin.png)
+
+<!-- below, content of ./090-troubleshooting/php-cs-fixer/readme.md -->
+
+### PHP-CS-FIXER {#troubleshooting-php-cs-fixer}
+
+#### PHP General Error {#troubleshooting-php-cs-fixer-php-general-error}
+
+By calling a PHP-CS-FIXER function like running `Fix this file` (<kbd>ALT</kbd>-<kbd>SHIFT</kbd>-<kbd>F</kbd>), you can get the following error:
+
+![PHP General Error](./090-troubleshooting/php-cs-fixer/images/php-general-error.png)
+
+To get more information, make sure to display the `Developer Tools` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>I</kbd>) in the `Help` menu. You'll get there extra information's.
+
+![Console](./090-troubleshooting/php-cs-fixer/images/console.png)
+
+As we can see here above, our PHP-CS-FIXER needs to be updated: we're using a more recent version of PHP and the maximum supported by the current PHP-CS-FIXER installed version is an old one.
 
 <!-- below, content of ./999-license/readme.md -->
 

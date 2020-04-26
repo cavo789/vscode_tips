@@ -1,6 +1,8 @@
 # Snippets {#snippets}
 
-## Built-in {#snippets-built-in}
+## Global {#snippets-global}
+
+### Built-in {#snippets-built-in}
 
 Snippets are pieces of pre-programmed code (like a `try...catch...`) that allow you to generate code without typing it entirely.
 
@@ -8,7 +10,7 @@ Depending on the open file and its language (php, js, markdown, ...), *VSCode* w
 
 Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the Palette Command then type `Insert Snippet` to get the list of already existing snippets.
 
-## User defined ones {#snippets-user-defined}
+### User defined ones {#snippets-user-defined}
 
 It is however possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
 
@@ -26,7 +28,7 @@ Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check yo
 <!-- concat-md::include "./files/tabCompletion.json" -->
 ```
 
-## Make snippets configurable {#snippets-user-placeholders}
+### Make snippets configurable {#snippets-user-placeholders}
 
 Take a look on the following snippet and the `$1` and `$2` placeholders.
 
@@ -36,7 +38,7 @@ Take a look on the following snippet and the `$1` and `$2` placeholders.
 
 Save this snippet in your editor and, in a `php` file, type `vd` followed by <kbd>CTRL</kbd>-<kbd>space</kbd>. You'll get now three new lines and the cursor will be placed where the `$1` placeholder was. Type a PHP variable and press <kbd>TAB</kbd> and see, the cursor will be now immediately put where `$2` was located. Thanks these placeholders it's easy to foresee, in a snippet, locations where you need to type dynamic content like variables, custom text, ...
 
-## Using variables
+### Using variables
 
 When creating a snippet, we can f.i. use the current PHP filename. Imagine you've a file name `Customer.php` and there you wish to create a new class.
 
@@ -50,10 +52,26 @@ The `TM_FILENAME_BASE` variable will be replaced by VS Code to the filename *(wi
 
 See all variables here: [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)
 
-## Settings {#snippets-settings}
+### Settings {#snippets-settings}
 
 User snippets are stored in the `%APPDATA%\code\user\snippets` folder, one `.json` file by languages.
 
-## Extensions {#snippets-extensions}
+### Extensions {#snippets-extensions}
 
 Also see the [snippet-creator](#extensions-snippet-creator) extension.
+
+## Project-based {#snippets-project-based}
+
+You can also define your snippets for your project and not globally. You can then share snippets with your colleagues f.i.
+
+1. In the root folder of your project, create a `.vscode` folder if not yet present;
+2. Create a file with the `.code-snippets` extension like `my-project.code-snippets`;
+3. You can configure your snippets there.
+
+Below an example from this `VSCode-Tips` project:
+
+```json
+<!-- concat-md::include "./files/project-based.json" -->
+```
+
+Now, each time I'll type `terminal` I can decide to immediately add the keyboard shortcuts; nice.
