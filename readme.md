@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-04-26 16:21:56 -->
+<!-- Last refresh date: 2020-04-26 16:27:49 -->
 
 <!-- below, content of ./index.md -->
 
@@ -38,7 +38,7 @@
        * [Comments {#working-with-code-comments}](#comments-working-with-code-comments)
     * [Integrated GIT {#integrated-git}](#integrated-git-integrated-git)
        * [Using with the terminal {#integrated-git-terminal}](#using-with-the-terminal-integrated-git-terminal)
-       * [Source Control: GIT {#integrated-git-source-control}](#source-control:-git-integrated-git-source-control)
+       * [Source Control - GIT {#integrated-git-source-control}](#source-control-git-integrated-git-source-control)
        * [Extensions {#integrated-git-extensions}](#extensions-integrated-git-extensions)
     * [Code definition](#code-definition)
     * [PHP-Unit {#phpunit}](#php-unit-phpunit)
@@ -362,7 +362,7 @@ If you now change a file by appending a new function, removing part of the code,
 
 Note: You can get access to any GIT command in the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>).
 
-#### Source Control: GIT {#integrated-git-source-control}
+#### Source Control - GIT {#integrated-git-source-control}
 
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>G</kbd> will open the `Source Control: GIT` pane with the list of changes made to your source after the last `git add` command.
 

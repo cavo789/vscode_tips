@@ -17,7 +17,7 @@ If you now change a file by appending a new function, removing part of the code,
 
 Note: You can get access to any GIT command in the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>).
 
-## Source Control: GIT {#integrated-git-source-control}
+## Source Control - GIT {#integrated-git-source-control}
 
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>G</kbd> will open the `Source Control: GIT` pane with the list of changes made to your source after the last `git add` command.
 
