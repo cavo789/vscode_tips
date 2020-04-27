@@ -9,3 +9,7 @@ You can choose for a DOS terminal, Powershell or bash one. Just select the `Sele
 ![Terminal](./images/terminal.png)
 
 Note: by clicking on the `+` button, we can create as many terminal we want.
+
+## Extensions {#terminal-extensions}
+
+Also see the [Rerun last command](#extensions-terminal-rerun) extension.
