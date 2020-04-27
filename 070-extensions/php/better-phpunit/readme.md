@@ -6,6 +6,14 @@ Better PHPUnit is the most popular, cleanest, and fastest PHPUnit runner for VS 
 
 ![Better PHPUnit](./images/demo.gif)
 
+## Configure
+
+Make sure to edit the `Workspace` settings and add these two keys:
+
+<!-- concat-md::include "./files/settings.json" -->
+
+Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` configuration file.
+
 ## Run a test method
 
 * Place your cursor in/on the method you want to run
