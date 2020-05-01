@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-04-26 16:27:49 -->
+<!-- Last refresh date: 2020-05-01 15:02:46 -->
 
 <!-- below, content of ./index.md -->
 
@@ -32,6 +32,7 @@
           * [Extensions {#snippets-extensions}](#extensions-snippets-extensions)
        * [Project-based {#snippets-project-based}](#project-based-snippets-project-based)
     * [Using the built-in terminal {#terminal}](#using-the-built-in-terminal-terminal)
+       * [Extensions {#terminal-extensions}](#extensions-terminal-extensions)
 * [Working with code {#working-with-code}](#working-with-code-working-with-code)
     * [Keyboard shortcuts {#working-with-code-shortcuts}](#keyboard-shortcuts-working-with-code-shortcuts)
        * [Code folding {#working-with-code-folding}](#code-folding-working-with-code-folding)
@@ -51,6 +52,7 @@
           * [Use inside vscode](#use-inside-vscode)
     * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
     * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
+    * [Rename all](#rename-all)
 * [Some settings {#settings}](#some-settings-settings)
     * [Editor settings {#settings-editor}](#editor-settings-settings-editor)
     * [Files settings {#settings-files}](#files-settings-settings-files)
@@ -73,6 +75,7 @@
           * [Log File Highlighter {#extensions_log-file-highlighter}](#log-file-highlighter-extensions_log-file-highlighter)
        * [Prettier {#extensions-prettier-vscode}](#prettier-extensions-prettier-vscode)
        * [Project Manager {#extensions-project-manager}](#project-manager-extensions-project-manager)
+       * [Rerun the last command {#extensions-terminal-rerun}](#rerun-the-last-command-extensions-terminal-rerun)
        * [Select highlight in minimap {#extensions-select-highlight-minimap}](#select-highlight-in-minimap-extensions-select-highlight-minimap)
        * [Snippet-creator {#extensions-snippet-creator}](#snippet-creator-extensions-snippet-creator)
        * [Sort lines {#extensions-sort-lines}](#sort-lines-extensions-sort-lines)
@@ -88,6 +91,7 @@
           * [Configuration {#extensions-markdownlint-configuration}](#configuration-extensions-markdownlint-configuration)
     * [PHP {#extensions-php}](#php-extensions-php)
        * [Better PHPUnit {#extensions-php-better-phpunit}](#better-phpunit-extensions-php-better-phpunit)
+          * [Configure](#configure)
           * [Run a test method](#run-a-test-method)
           * [Run a test file](#run-a-test-file)
           * [Run the entire suite](#run-the-entire-suite)
@@ -313,6 +317,10 @@ You can choose for a DOS terminal, Powershell or bash one. Just select the `Sele
 
 Note: by clicking on the `+` button, we can create as many terminal we want.
 
+#### Extensions {#terminal-extensions}
+
+Also see the [Rerun last command](#extensions-terminal-rerun) extension.
+
 <!-- below, content of ./020-working-with-code/readme.md -->
 
 ## Working with code {#working-with-code}
@@ -531,6 +539,18 @@ Really convenient.
 The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: double-click on, f.i., the `public` word to select the first occurrence. Press <kbd>CTRL</kbd>-<kbd>D</kbd> to select the second, the third, and so on. Press <kbd>CTRL</kbd>-<kbd>D</kbd> again and again to select all occurrences. Then type `private` f.i. to overwrite selections and replace by the new word.
 
 I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
+
+<!-- below, content of ./030-refactoring/readme.md -->
+
+<!-- below, content of ./030-refactoring/010-rename/readme.md -->
+
+### Rename all
+
+1. Select the text to rename like a variable name.
+2. Once selected, press <kbd>CTRL</kbd>-<kbd>F2</kbd>. All occurrences of that text will be selected.
+3. Type the new value.
+
+![Rename All](./030-refactoring/010-rename/images/rename.gif)
 
 <!-- below, content of ./060-settings/readme.md -->
 
@@ -859,6 +879,18 @@ Easily switch between projects.
 
 ![Project Manager](./070-extensions/core/project-manager/images/project-manager-list-sort-by-name.png)
 
+<!-- below, content of ./070-extensions/core/rerun-last-command/readme.md -->
+
+#### Rerun the last command {#extensions-terminal-rerun}
+
+[https://marketplace.visualstudio.com/items?itemName=Cameron.rerun-last-command](https://marketplace.visualstudio.com/items?itemName=Cameron.rerun-last-command)
+
+Quickly repeat the last command in your terminal without leaving the text editor.
+
+Just press <kbd>CTRL</kbd>-<kbd>F7</kbd> to rerun it.
+
+![Rerun last command](./070-extensions/core/rerun-last-command/images/demo.gif)
+
 <!-- below, content of ./070-extensions/core/select-highlight-minimap/readme.md -->
 
 #### Select highlight in minimap {#extensions-select-highlight-minimap}
@@ -1007,6 +1039,17 @@ Set your custom rules:
 Better PHPUnit is the most popular, cleanest, and fastest PHPUnit runner for VS Code.
 
 ![Better PHPUnit](./070-extensions/php/better-phpunit/images/demo.gif)
+
+##### Configure
+
+Make sure to edit the `Workspace` settings and add these two keys:
+
+{
+  "better-phpunit.phpunitBinary": "c:\\your_project\\vendor\\bin\\phpunit.bat",
+  "better-phpunit.xmlConfigFilepath": "c:\\your_project\\phpunit.xml"
+}
+
+Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` configuration file.
 
 ##### Run a test method
 
