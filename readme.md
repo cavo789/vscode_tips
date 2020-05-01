@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-01 16:33:59 -->
+<!-- Last refresh date: 2020-05-01 23:14:30 -->
 
 <!-- below, content of ./index.md -->
 
@@ -70,8 +70,11 @@
        * [Bookmarks {#extensions-bookmarks}](#bookmarks-extensions-bookmarks)
        * [Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}](#bracket-pair-colorizer-extensions-bracket-pair-colorizer)
        * [Code Spell Checker {#extensions-code-spell-checker}](#code-spell-checker-extensions-code-spell-checker)
+       * [EditorConfig {#extensions-editorconfig}](#editorconfig-extensions-editorconfig)
        * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
        * [Gitlens {#extensions-gitlens}](#gitlens-extensions-gitlens)
+       * [Vscode Google Translate {#extensions-google-translate}](#vscode-google-translate-extensions-google-translate)
+          * [Configuration](#configuration)
        * [Colouring of source codes according to the language {#extensions-highlight}](#colouring-of-source-codes-according-to-the-language-extensions-highlight)
           * [Apache configuration file {#highlight-apache}](#apache-configuration-file-highlight-apache)
           * [Log File Highlighter {#extensions_log-file-highlighter}](#log-file-highlighter-extensions_log-file-highlighter)
@@ -838,6 +841,14 @@ The goal of this spell checker is to help catch common spelling errors while kee
 
 ![Code Spell Checker](./070-extensions/core/code-spell-checker/images/example.gif)
 
+<!-- below, content of ./070-extensions/core/editorconfig/readme.md -->
+
+#### EditorConfig {#extensions-editorconfig}
+
+> [https://github.com/editorconfig/editorconfig-vscode](https://github.com/editorconfig/editorconfig-vscode)
+
+EditorConfig extension for Visual Studio Code [https://editorconfig.org/](https://editorconfig.org/)
+
 <!-- below, content of ./070-extensions/core/favorites/readme.md -->
 
 #### Favorites {#extensions-favorites}
@@ -857,6 +868,35 @@ Allows you to group shortcuts to files that, for example, you often have to open
 Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more
 
 ![GitLens](./070-extensions/core/gitlens/images/gitlens-preview.gif)
+
+<!-- below, content of ./070-extensions/core/google-translate/readme.md -->
+
+#### Vscode Google Translate {#extensions-google-translate}
+
+> [https://marketplace.visualstudio.com/items?itemName=funkyremi.vscode-google-translate](https://marketplace.visualstudio.com/items?itemName=funkyremi.vscode-google-translate)
+
+Quickly translate text right in your code.
+
+![Translate](./070-extensions/core/google-translate/images/translate.gif)
+
+##### Configuration
+
+By setting your preferred language, you'll not be prompted each time about the target language.
+
+```json
+{
+    "vscodeGoogleTranslate.preferredLanguage": "fr",
+}
+```
+
+Also, it's best to assign keyboard shortcut like <kbd>ALT</kbd>-<kbd>SHIFT</kbd>-<kbd>T</kbd> to translate the text.
+
+```json
+{
+    "key": "shift+alt+t",
+    "command": "extension.translateTextPreferred"
+}
+```
 
 <!-- below, content of ./070-extensions/core/highlight/readme.md -->
 

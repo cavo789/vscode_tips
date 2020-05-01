@@ -1,0 +1,4 @@
+{
+    "key": "shift+alt+t",
+    "command": "extension.translateTextPreferred"
+}
