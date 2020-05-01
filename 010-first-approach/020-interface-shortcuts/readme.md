@@ -3,6 +3,7 @@
 * <kbd>CTRL</kbd>-<kbd>O</kbd> to open a file.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>O</kbd> to open a folder (a project).
 * <kbd>CTRL</kbd>-<kbd>R</kbd> to show the list of recent folders (recent project).
+  * **TIP** Before clicking on the desired folder, be sure to press the <kbd>CTRL</kbd> key to open the folder in a new window ([link](https://github.com/Microsoft/vscode/issues/31581#issuecomment-321753188))
 * <kbd>CTRL</kbd>-<kbd>P</kbd> to quickly retrieve and open a file in an open project.
 * <kbd>CTRL</kbd>-<kbd>O</kbd> to open a recent folder (a project).
 * <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>F</kbd> to open the `search` pane (when a project has been opened).

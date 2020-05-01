@@ -1,0 +1,6 @@
+{
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.defaultLanguage": "php",
+    "code-runner.enableAppInsights": false,
+    "code-runner.fileDirectoryAsCwd": true
+}
