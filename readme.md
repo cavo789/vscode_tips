@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-01 23:14:30 -->
+<!-- Last refresh date: 2020-05-01 23:17:27 -->
 
 <!-- below, content of ./index.md -->
 
