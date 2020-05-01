@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-01 15:02:46 -->
+<!-- Last refresh date: 2020-05-01 16:33:59 -->
 
 <!-- below, content of ./index.md -->
 
@@ -31,6 +31,8 @@
           * [Settings {#snippets-settings}](#settings-snippets-settings)
           * [Extensions {#snippets-extensions}](#extensions-snippets-extensions)
        * [Project-based {#snippets-project-based}](#project-based-snippets-project-based)
+       * [Generator {#snippets-generator}](#generator-snippets-generator)
+       * [Video tutorial {#snippets-video}](#video-tutorial-snippets-video)
     * [Using the built-in terminal {#terminal}](#using-the-built-in-terminal-terminal)
        * [Extensions {#terminal-extensions}](#extensions-terminal-extensions)
 * [Working with code {#working-with-code}](#working-with-code-working-with-code)
@@ -96,6 +98,8 @@
           * [Run a test file](#run-a-test-file)
           * [Run the entire suite](#run-the-entire-suite)
           * [Run the previous test](#run-the-previous-test)
+       * [Code-runner {#extensions-php-better-phpunit}](#code-runner-extensions-php-better-phpunit)
+          * [Configuration](#configuration)
        * [PHP intelephense {#extensions-php-intelephense}](#php-intelephense-extensions-php-intelephense)
           * [Configuration {#extensions-php-intelephense-configuration}](#configuration-extensions-php-intelephense-configuration)
        * [Laravel Blade Snippets {#extensions-laravel-blade}](#laravel-blade-snippets-extensions-laravel-blade)
@@ -113,6 +117,7 @@
     * [Phan {#troubleshooting-phan}](#phan-troubleshooting-phan)
     * [PHP-CS-FIXER {#troubleshooting-php-cs-fixer}](#php-cs-fixer-troubleshooting-php-cs-fixer)
        * [PHP General Error {#troubleshooting-php-cs-fixer-php-general-error}](#php-general-error-troubleshooting-php-cs-fixer-php-general-error)
+* [Create your own extension {#own-extension}](#create-your-own-extension-own-extension)
 * [License](#license)
 <!-- table-of-contents - end -->
 
@@ -132,15 +137,19 @@ The [Insiders version](https://code.visualstudio.com/insiders/) contains the ver
 
 ### The first keyboard shortcuts to learn {#discovering-shortcuts}
 
+* <kbd>CTRL</kbd>-<kbd>B</kbd> toggle visibility of the side bar (the one with the list of files in the project).
 * <kbd>CTRL</kbd>-<kbd>O</kbd> to open a file.
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>O</kbd> to open a folder (a project).
 * <kbd>CTRL</kbd>-<kbd>R</kbd> to show the list of recent folders (recent project).
+  * **TIP** Before clicking on the desired folder   , be sure to press the <kbd>CTRL</kbd> key to open the folder in a new window ([link](https://github.com/Microsoft/vscode/issues/31581#issuecomment-321753188))
 * <kbd>CTRL</kbd>-<kbd>P</kbd> to quickly retrieve and open a file in an open project.
 * <kbd>CTRL</kbd>-<kbd>O</kbd> to open a recent folder (a project).
 * <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>F</kbd> to open the `search` pane (when a project has been opened).
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette` to quick access all commands of the editor.
 * <kbd>CTRL</kbd>-<kbd>,</kbd> to get access to the `User Settings`.
-* <kbd>SHIFT</kbd>-<kbd>CTRL</kbd>-<kbd>X</kbd> to open the list of `Extensions`.
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>N</kbd> to open a new instance of vscode.
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>T</kbd> to reopen a closed file.
+* <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>X</kbd> to open the list of `Extensions`.
 * <kbd>CTRL</kbd>-<kbd>B</kbd> show/hide the left side-bar (if <kbd>CTRL</kbd>-<kbd>B</kbd> isn't used like in markdown files to set in bold).
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>Z</kbd> maximize the screen, aka `Zen mode`.
 
@@ -235,8 +244,8 @@ Take a look on the following snippet and the `$1` and `$2` placeholders.
         "prefix": "vd",
         "body": [
             "echo '<pre>'.__METHOD__.'--'.__LINE__.'</pre>';",
-            "echo '<pre>'.print_r($1, true).'</pre>';",
-            "die($2);"
+            "echo '<pre>'.print_r(${1:\\$variableName}, true).'</pre>';",
+            "die(${2:\"I'm dying right now\"});"
         ],
         "description": "Debug - Die and echo file/line info"
     }
@@ -244,6 +253,10 @@ Take a look on the following snippet and the `$1` and `$2` placeholders.
 ```
 
 Save this snippet in your editor and, in a `php` file, type `vd` followed by <kbd>CTRL</kbd>-<kbd>space</kbd>. You'll get now three new lines and the cursor will be placed where the `$1` placeholder was. Type a PHP variable and press <kbd>TAB</kbd> and see, the cursor will be now immediately put where `$2` was located. Thanks these placeholders it's easy to foresee, in a snippet, locations where you need to type dynamic content like variables, custom text, ...
+
+Tip: use `${1:$variableName}` instead of just `$1` to show a place holder and/or a default value.
+
+![var_dump](./010-first-approach/060-snippets/images/snippets-vd.gif)
 
 ##### Using variables
 
@@ -302,6 +315,14 @@ Below an example from this `VSCode-Tips` project:
 ```
 
 Now, each time I'll type `terminal` I can decide to immediately add the keyboard shortcuts; nice.
+
+#### Generator {#snippets-generator}
+
+If you prefer to use a generator, [https://snippet-generator.app/](https://snippet-generator.app/) can help you.
+
+#### Video tutorial {#snippets-video}
+
+[https://www.youtube.com/watch?v=JIqk9UxgKEc](https://www.youtube.com/watch?v=JIqk9UxgKEc)
 
 <!-- below, content of ./010-first-approach/070-terminal/readme.md -->
 
@@ -1072,6 +1093,25 @@ Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` con
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
 * Select: `Better PHPUnit: run previous` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd>)
 
+<!-- below, content of ./070-extensions/php/code-runner/readme.md -->
+
+#### Code-runner {#extensions-php-better-phpunit}
+
+> [https://github.com/formulahendry/vscode-code-runner](https://github.com/formulahendry/vscode-code-runner)
+
+With code-runner, open a PHP file and just run it from within vscode. Usefull to run samples scripts f.i.
+
+##### Configuration
+
+Be sure to enable the `fileDirectoryAsCwd` setting. This will force `code-runner` to run the script by first setting the current directory to the one of the PHP file. Needed to make sure your require (like your autoloader) statements can retrieve files.
+
+{
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.defaultLanguage": "php",
+    "code-runner.enableAppInsights": false,
+    "code-runner.fileDirectoryAsCwd": true
+}
+
 <!-- below, content of ./070-extensions/php/intelephense/readme.md -->
 
 #### PHP intelephense {#extensions-php-intelephense}
@@ -1257,6 +1297,18 @@ To get more information, make sure to display the `Developer Tools` (<kbd>CTRL</
 ![Console](./090-troubleshooting/php-cs-fixer/images/console.png)
 
 As we can see here above, our PHP-CS-FIXER needs to be updated: we're using a more recent version of PHP and the maximum supported by the current PHP-CS-FIXER installed version is an old one.
+
+<!-- below, content of ./100-create-own-extension/readme.md -->
+
+## Create your own extension {#own-extension}
+
+> [https://www.youtube.com/watch?v=srwsnNhiqv8](https://www.youtube.com/watch?v=srwsnNhiqv8)
+>
+> [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+
+It's quite easy to create his own extension by the use of `Yo Code - Extension Generator`.
+
+The [YouTube video](https://www.youtube.com/watch?v=srwsnNhiqv8) is showing how to create a snippet extension. Really easy!
 
 <!-- below, content of ./999-license/readme.md -->
 

@@ -38,6 +38,10 @@ Take a look on the following snippet and the `$1` and `$2` placeholders.
 
 Save this snippet in your editor and, in a `php` file, type `vd` followed by <kbd>CTRL</kbd>-<kbd>space</kbd>. You'll get now three new lines and the cursor will be placed where the `$1` placeholder was. Type a PHP variable and press <kbd>TAB</kbd> and see, the cursor will be now immediately put where `$2` was located. Thanks these placeholders it's easy to foresee, in a snippet, locations where you need to type dynamic content like variables, custom text, ...
 
+Tip: use `${1:$variableName}` instead of just `$1` to show a place holder and/or a default value.
+
+![var_dump](./images/snippets-vd.gif)
+
 ### Using variables
 
 When creating a snippet, we can f.i. use the current PHP filename. Imagine you've a file name `Customer.php` and there you wish to create a new class.
@@ -75,3 +79,11 @@ Below an example from this `VSCode-Tips` project:
 ```
 
 Now, each time I'll type `terminal` I can decide to immediately add the keyboard shortcuts; nice.
+
+## Generator {#snippets-generator}
+
+If you prefer to use a generator, [https://snippet-generator.app/](https://snippet-generator.app/) can help you.
+
+## Video tutorial {#snippets-video}
+
+[https://www.youtube.com/watch?v=JIqk9UxgKEc](https://www.youtube.com/watch?v=JIqk9UxgKEc)
