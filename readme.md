@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-01 23:17:27 -->
+<!-- Last refresh date: 2020-05-03 23:23:16 -->
 
 <!-- below, content of ./index.md -->
 
@@ -35,6 +35,8 @@
        * [Video tutorial {#snippets-video}](#video-tutorial-snippets-video)
     * [Using the built-in terminal {#terminal}](#using-the-built-in-terminal-terminal)
        * [Extensions {#terminal-extensions}](#extensions-terminal-extensions)
+    * [Search](#search)
+       * [Save the search](#save-the-search)
 * [Working with code {#working-with-code}](#working-with-code-working-with-code)
     * [Keyboard shortcuts {#working-with-code-shortcuts}](#keyboard-shortcuts-working-with-code-shortcuts)
        * [Code folding {#working-with-code-folding}](#code-folding-working-with-code-folding)
@@ -54,6 +56,7 @@
           * [Use inside vscode](#use-inside-vscode)
     * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
     * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
+    * [Navigate between problems](#navigate-between-problems)
     * [Rename all](#rename-all)
 * [Some settings {#settings}](#some-settings-settings)
     * [Editor settings {#settings-editor}](#editor-settings-settings-editor)
@@ -121,6 +124,9 @@
     * [PHP-CS-FIXER {#troubleshooting-php-cs-fixer}](#php-cs-fixer-troubleshooting-php-cs-fixer)
        * [PHP General Error {#troubleshooting-php-cs-fixer-php-general-error}](#php-general-error-troubleshooting-php-cs-fixer-php-general-error)
 * [Create your own extension {#own-extension}](#create-your-own-extension-own-extension)
+* [Bookmarks](#bookmarks)
+    * [VS Code can do that](#vs-code-can-do-that)
+    * [VS Code channel on youtube](#vs-code-channel-on-youtube)
 * [License](#license)
 <!-- table-of-contents - end -->
 
@@ -345,6 +351,20 @@ Note: by clicking on the `+` button, we can create as many terminal we want.
 
 Also see the [Rerun last command](#extensions-terminal-rerun) extension.
 
+<!-- below, content of ./010-first-approach/080-search/readme.md -->
+
+### Search
+
+#### Save the search
+
+Just after having fired a search, it's possible to click on the `Open in editor` link so the result appears in the editor. The very nice thing then is to be able to see the context (i.e. xxx lines before/after the search match) and to be able to save the search as a file (the filename will be `.code-search`).
+
+This can be useful when f.i. the search pattern is a complex regex or if working on the search result can take a long time so we can save the search as a file in the project and open it later on.
+
+![Save search](./010-first-approach/080-search/images/save_search.png)
+
+This video show this: [https://www.youtube.com/watch?v=zm7ZjENKUEc](https://www.youtube.com/watch?v=zm7ZjENKUEc)
+
 <!-- below, content of ./020-working-with-code/readme.md -->
 
 ## Working with code {#working-with-code}
@@ -563,6 +583,14 @@ Really convenient.
 The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: double-click on, f.i., the `public` word to select the first occurrence. Press <kbd>CTRL</kbd>-<kbd>D</kbd> to select the second, the third, and so on. Press <kbd>CTRL</kbd>-<kbd>D</kbd> again and again to select all occurrences. Then type `private` f.i. to overwrite selections and replace by the new word.
 
 I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
+
+<!-- below, content of ./020-working-with-code/070-navigate-problems/readme.md -->
+
+### Navigate between problems
+
+The list of problems detected by VS Code is displayed in a tab at the bottom of the screen, below the main editor.
+
+You can see the list of problems and navigate between each of them by just pressing <kbd>F8</kbd>.
 
 <!-- below, content of ./030-refactoring/readme.md -->
 
@@ -1349,6 +1377,26 @@ As we can see here above, our PHP-CS-FIXER needs to be updated: we're using a mo
 It's quite easy to create his own extension by the use of `Yo Code - Extension Generator`.
 
 The [YouTube video](https://www.youtube.com/watch?v=srwsnNhiqv8) is showing how to create a snippet extension. Really easy!
+
+<!-- below, content of ./800-bookmarks/readme.md -->
+
+## Bookmarks
+
+List of nice website for learning VS Code.
+
+<!-- below, content of ./800-bookmarks/vscode-can-do-that/readme.md -->
+
+### VS Code can do that
+
+All the best things about Visual Studio Code that nobody ever bothered to tell you.
+
+>[https://vscodecandothat.com/](https://vscodecandothat.com/)
+
+<!-- below, content of ./800-bookmarks/vscode-youtube/readme.md -->
+
+### VS Code channel on youtube
+
+> [https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w](https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w)
 
 <!-- below, content of ./999-license/readme.md -->
 
