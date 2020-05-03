@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-03 23:23:16 -->
+<!-- Last refresh date: 2020-05-03 23:41:10 -->
 
 <!-- below, content of ./index.md -->
 
@@ -54,6 +54,8 @@
        * [Visual Studio Code](#visual-studio-code)
           * [Settings](#settings)
           * [Use inside vscode](#use-inside-vscode)
+          * [Breakpoint](#breakpoint)
+          * [Logpoint](#logpoint)
     * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
     * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
     * [Navigate between problems](#navigate-between-problems)
@@ -536,6 +538,18 @@ Now, go back to your web browser and refresh your URL without any change; if you
 ![xDebug has stopped the execution](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_debugging.png)
 
 Use <kbd>F10</kbd> to go to the next instruction or <kbd>F11</kbd> to set into the next instruction (if the instruction is a function, go inside the function).
+
+##### Breakpoint
+
+By adding a breakpoint, it's possible to edit it and set a condition.
+
+![Conditional breakpoint](./020-working-with-code/045-xdebug/images/conditional_breakpoint.gif)
+
+##### Logpoint
+
+Instead of writing here and there `echo '...';` or `console.log(...);` statements, VS Code can do it for us:
+
+![Add a logpoint](./020-working-with-code/045-xdebug/images/logpoint.gif)
 
 <!-- below, content of ./020-working-with-code/050-php-formatting/readme.md -->
 

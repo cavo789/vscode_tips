@@ -68,3 +68,15 @@ Now, go back to your web browser and refresh your URL without any change; if you
 ![xDebug has stopped the execution](./images/xdebug_visual_studio_debugging.png)
 
 Use <kbd>F10</kbd> to go to the next instruction or <kbd>F11</kbd> to set into the next instruction (if the instruction is a function, go inside the function).
+
+### Breakpoint
+
+By adding a breakpoint, it's possible to edit it and set a condition.
+
+![Conditional breakpoint](./images/conditional_breakpoint.gif)
+
+### Logpoint
+
+Instead of writing here and there `echo '...';` or `console.log(...);` statements, VS Code can do it for us:
+
+![Add a logpoint](./images/logpoint.gif)
