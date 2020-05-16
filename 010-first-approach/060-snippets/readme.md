@@ -28,6 +28,12 @@ Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check yo
 <!-- concat-md::include "./files/tabCompletion.json" -->
 ```
 
+The example below will add two snippets, one called `img` and the other one `url`. These snippets are for markdown files so, when adding snippets to VSCode, in the `Configure User Snippets` command, select `markdown` as language first.
+
+```json
+<!-- concat-md::include "./files/markdown.json" -->
+```
+
 ### Make snippets configurable {#snippets-user-placeholders}
 
 Take a look on the following snippet and the `$1` and `$2` placeholders.

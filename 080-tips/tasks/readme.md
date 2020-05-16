@@ -19,3 +19,5 @@ Note: `${workspaceFolder}` has been used instead of just `./concat-md.cmd` to ma
 To run that task, we just need to call the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>) then select `Tasks: Run task`. You'll then be prompted to select the task and `concat-md` will appear.
 
 All your custom tasks will be accessible in the `Tasks: Run task` list.
+
+Tip: it's possible to specify more than one command using the `&&` syntax; f.i. `"command": "cd tests/ && run_all.cmd",`

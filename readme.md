@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-16 23:05:17 -->
+<!-- Last refresh date: 2020-05-16 23:56:39 -->
 
 <!-- below, content of ./index.md -->
 
@@ -120,6 +120,8 @@
     * [Interface](#interface)
        * [Use color to identify projects](#use-color-to-identify-projects)
     * [Keyboard shortcuts for Windows](#keyboard-shortcuts-for-windows)
+    * [Search and replace - Regex](#search-and-replace-regex)
+       * [Remove all empty lines](#remove-all-empty-lines)
     * [Custom tasks](#custom-tasks)
 * [Troubleshooting {#troubleshooting}](#troubleshooting-troubleshooting)
     * [Intelephense {#troubleshooting-intelephense}](#intelephense-troubleshooting-intelephense)
@@ -198,6 +200,7 @@ Select the parent folder, right-click and select `New file` or `New folder`.
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>O</kbd> to open (browse) a symbol[^symbol] in the opened file. Navigating with the arrows will select the portion of code in the editor.
 * <kbd>CTRL</kbd>-<kbd>T</kbd> to open (browse) a symbol[^symbol] in the entire project. In a markdown file, <kbd>CTRL</kbd>-<kbd>T</kbd> will display the list of every headings f.i.
 * <kbd>CTRL</kbd>-<kbd>TAB</kbd> to switch between opened tabs (just like Windows and active applications).
+* <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>Q</kbd> go back to the last edited line.
 
 #### Select first {#traversal-select-first}
 
@@ -243,6 +246,27 @@ Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check yo
 ```json
 {
     "editor.tabCompletion": "on"
+}
+```
+
+The example below will add two snippets, one called `img` and the other one `url`. These snippets are for markdown files so, when adding snippets to VSCode, in the `Configure User Snippets` command, select `markdown` as language first.
+
+```json
+{
+    "img": {
+        "prefix": "img",
+        "description": "Add an image tags",
+        "body": [
+            "![${1:caption}](./images/${2:image}.png)"
+        ]
+    },
+    "url": {
+        "prefix": "url",
+        "description": "Add an url tags",
+        "body": [
+            "[${1:URL}](${1:URL})"
+        ]
+    }
 }
 ```
 
@@ -1333,6 +1357,19 @@ Happy coloring 😉
 
 Cheat sheet for Windows users: [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
+<!-- below, content of ./080-tips/regex/readme.md -->
+
+### Search and replace - Regex
+
+#### Remove all empty lines
+
+> [https://dev.to/gyurisc/easily-remove-empty-lines-using-regular-expression-in-visual-studio-code-1230](https://dev.to/gyurisc/easily-remove-empty-lines-using-regular-expression-in-visual-studio-code-1230)
+
+* Search `^(?:[\t]*(?:\r?\n|\r))+`
+* Replace by *let this field empty*
+
+![Remove all empty lines](./080-tips/regex/images/replace_empty_lines.png)
+
 <!-- below, content of ./080-tips/tasks/readme.md -->
 
 ### Custom tasks
@@ -1370,6 +1407,8 @@ Note: `${workspaceFolder}` has been used instead of just `./concat-md.cmd` to ma
 To run that task, we just need to call the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>) then select `Tasks: Run task`. You'll then be prompted to select the task and `concat-md` will appear.
 
 All your custom tasks will be accessible in the `Tasks: Run task` list.
+
+Tip: it's possible to specify more than one command using the `&&` syntax; f.i. `"command": "cd tests/ && run_all.cmd",`
 
 <!-- below, content of ./090-troubleshooting/readme.md -->
 
