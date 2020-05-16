@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-03 23:41:10 -->
+<!-- Last refresh date: 2020-05-16 23:05:17 -->
 
 <!-- below, content of ./index.md -->
 
@@ -120,6 +120,7 @@
     * [Interface](#interface)
        * [Use color to identify projects](#use-color-to-identify-projects)
     * [Keyboard shortcuts for Windows](#keyboard-shortcuts-for-windows)
+    * [Custom tasks](#custom-tasks)
 * [Troubleshooting {#troubleshooting}](#troubleshooting-troubleshooting)
     * [Intelephense {#troubleshooting-intelephense}](#intelephense-troubleshooting-intelephense)
     * [Phan {#troubleshooting-phan}](#phan-troubleshooting-phan)
@@ -1331,6 +1332,44 @@ Happy coloring 😉
 ### Keyboard shortcuts for Windows
 
 Cheat sheet for Windows users: [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+
+<!-- below, content of ./080-tips/tasks/readme.md -->
+
+### Custom tasks
+
+> [https://code.visualstudio.com/docs/editor/tasks](https://code.visualstudio.com/docs/editor/tasks)
+>
+> [https://code.visualstudio.com/docs/editor/variables-reference](https://code.visualstudio.com/docs/editor/variables-reference)
+
+By creating a  `./.vscode/tasks.json`, it's possible to add custom tasks to Visual Studio Code.
+
+A custom task can be running PHP Unit tests or any other shell commands.
+
+The following example define a task called `concat-md`, it's a shell command (i.e. a DOS task).
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "concat-md",
+            "type": "shell",
+            "command": "${workspaceFolder}/concat-md.cmd",
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+```
+
+Note: `${workspaceFolder}` has been used instead of just `./concat-md.cmd` to make sure vscode will use the file from the repo's root folder.
+
+To run that task, we just need to call the `Command Palette` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>) then select `Tasks: Run task`. You'll then be prompted to select the task and `concat-md` will appear.
+
+All your custom tasks will be accessible in the `Tasks: Run task` list.
 
 <!-- below, content of ./090-troubleshooting/readme.md -->
 
