@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-18 22:50:19 -->
+<!-- Last refresh date: 2020-05-18 22:54:08 -->
 
 <!-- below, content of ./index.md -->
 
@@ -87,6 +87,7 @@
        * [Prettier {#extensions-prettier-vscode}](#prettier-extensions-prettier-vscode)
        * [Project Manager {#extensions-project-manager}](#project-manager-extensions-project-manager)
        * [Rerun the last command {#extensions-terminal-rerun}](#rerun-the-last-command-extensions-terminal-rerun)
+       * [REST client {#extensions-rest-client}](#rest-client-extensions-rest-client)
        * [Select highlight in minimap {#extensions-select-highlight-minimap}](#select-highlight-in-minimap-extensions-select-highlight-minimap)
        * [Snippet-creator {#extensions-snippet-creator}](#snippet-creator-extensions-snippet-creator)
        * [Sort lines {#extensions-sort-lines}](#sort-lines-extensions-sort-lines)
@@ -1029,6 +1030,14 @@ Quickly repeat the last command in your terminal without leaving the text editor
 Just press <kbd>CTRL</kbd>-<kbd>F7</kbd> to rerun it.
 
 ![Rerun last command](./070-extensions/core/rerun-last-command/images/demo.gif)
+
+<!-- below, content of ./070-extensions/core/rest-client/readme.md -->
+
+#### REST client {#extensions-rest-client}
+
+> [https://marketplace.visualstudio.com/items?itemName=humao.rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+Make easy to debug JSON API without leaving the IDE.
 
 <!-- below, content of ./070-extensions/core/select-highlight-minimap/readme.md -->
 
