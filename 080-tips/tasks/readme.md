@@ -1,7 +1,7 @@
 # Custom tasks
 
 > [https://code.visualstudio.com/docs/editor/tasks](https://code.visualstudio.com/docs/editor/tasks)
-> 
+>
 > [https://code.visualstudio.com/docs/editor/variables-reference](https://code.visualstudio.com/docs/editor/variables-reference)
 
 By creating a  `./.vscode/tasks.json`, it's possible to add custom tasks to Visual Studio Code.
@@ -21,3 +21,5 @@ To run that task, we just need to call the `Command Palette` (<kbd>CTRL</kbd>-<k
 All your custom tasks will be accessible in the `Tasks: Run task` list.
 
 Tip: it's possible to specify more than one command using the `&&` syntax; f.i. `"command": "cd tests/ && run_all.cmd",`
+
+![Running the pre-commit custom task](./images/pre-commit.gif)

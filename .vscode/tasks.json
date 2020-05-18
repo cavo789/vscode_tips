@@ -10,6 +10,16 @@
                 "reveal": "always"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "pre-commit - Linting and code quality ",
+            "type": "shell",
+            "command": "pre-commit.cmd",
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
         }
     ]
 }
