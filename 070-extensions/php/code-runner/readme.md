@@ -4,7 +4,7 @@
 
 With code-runner, open a PHP file and just run it from within vscode. Usefull to run samples scripts f.i.
 
-## Configuration
+## Configuration Code-runner
 
 Be sure to enable the `fileDirectoryAsCwd` setting. This will force `code-runner` to run the script by first setting the current directory to the one of the PHP file. Needed to make sure your require (like your autoloader) statements can retrieve files.
 

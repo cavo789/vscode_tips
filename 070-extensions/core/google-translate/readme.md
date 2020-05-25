@@ -6,7 +6,7 @@ Quickly translate text right in your code.
 
 ![Translate](./images/translate.gif)
 
-## Configuration
+## Configuration Google Translate
 
 By setting your preferred language, you'll not be prompted each time about the target language.
 

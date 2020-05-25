@@ -2,7 +2,7 @@
 
 * [https://github.com/DavidAnson/vscode-markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
 
-## Configuration {#extensions-markdownlint-configuration}
+## Configuration Markdownlint {#extensions-markdownlint-configuration}
 
 You can configure markdownlint to ignore some files or some rules.
 

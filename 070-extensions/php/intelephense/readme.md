@@ -2,7 +2,7 @@
 
 > [https://github.com/bmewburn/vscode-intelephense](https://github.com/bmewburn/vscode-intelephense)
 
-## Configuration {#extensions-php-intelephense-configuration}
+## Configuration PHP intelephense {#extensions-php-intelephense-configuration}
 
 After installation, we need to disable the built-in PHP feature of VSCode.
 
