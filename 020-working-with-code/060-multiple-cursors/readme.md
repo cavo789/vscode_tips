@@ -13,3 +13,16 @@ Really convenient.
 The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: double-click on, f.i., the `public` word to select the first occurrence. Press <kbd>CTRL</kbd>-<kbd>D</kbd> to select the second, the third, and so on. Press <kbd>CTRL</kbd>-<kbd>D</kbd> again and again to select all occurrences. Then type `private` f.i. to overwrite selections and replace by the new word.  
 
 I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
+
+## Insert prefix on each line {#multiple-cursors-insert-prefix}
+
+<kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> allow to enable multiple cursors, a nice use case is to select a bloc of lines and add a bullet so transform lines to a bullet list.
+
+Here is how to do:
+
+1. Select a bloc a lines
+2. Press <kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> to enable multiple cursors
+3. Press <kbd>Home</kbd> to put cursors at the beginning of each lines,
+4. Press <kbd>*</kbd> followed by a space to transform the list of lines to a bullet list.
+
+![Make a  bullet list](./images/make_bullet_list.gif)

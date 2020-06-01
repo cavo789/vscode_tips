@@ -2,7 +2,7 @@
 <!-- C:\Christophe\Repository\writing-documentation\concat-md\concat-md.ps1 -->
 <!-- So don't modify this file manually but run the tool once more instead -->
 
-<!-- Last refresh date: 2020-05-18 22:54:08 -->
+<!-- Last refresh date: 2020-06-01 11:04:38 -->
 
 <!-- below, content of ./index.md -->
 
@@ -58,6 +58,7 @@
           * [Logpoint](#logpoint)
     * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
     * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
+       * [Insert prefix on each line {#multiple-cursors-insert-prefix}](#insert-prefix-on-each-line-multiple-cursors-insert-prefix)
     * [Navigate between problems](#navigate-between-problems)
     * [Rename all](#rename-all)
 * [Some settings {#settings}](#some-settings-settings)
@@ -80,7 +81,7 @@
        * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
        * [Gitlens {#extensions-gitlens}](#gitlens-extensions-gitlens)
        * [Vscode Google Translate {#extensions-google-translate}](#vscode-google-translate-extensions-google-translate)
-          * [Configuration](#configuration)
+          * [Configuration Google Translate](#configuration-google-translate)
        * [Colouring of source codes according to the language {#extensions-highlight}](#colouring-of-source-codes-according-to-the-language-extensions-highlight)
           * [Apache configuration file {#highlight-apache}](#apache-configuration-file-highlight-apache)
           * [Log File Highlighter {#extensions_log-file-highlighter}](#log-file-highlighter-extensions_log-file-highlighter)
@@ -100,7 +101,7 @@
     * [Markdown {#extensions-markdown}](#markdown-extensions-markdown)
        * [Markdown All in One {#extensions-markdown-all-in-one}](#markdown-all-in-one-extensions-markdown-all-in-one)
        * [Markdownlint {#extensions-markdownlint}](#markdownlint-extensions-markdownlint)
-          * [Configuration {#extensions-markdownlint-configuration}](#configuration-extensions-markdownlint-configuration)
+          * [Configuration Markdownlint {#extensions-markdownlint-configuration}](#configuration-markdownlint-extensions-markdownlint-configuration)
     * [PHP {#extensions-php}](#php-extensions-php)
        * [Better PHPUnit {#extensions-php-better-phpunit}](#better-phpunit-extensions-php-better-phpunit)
           * [Configure](#configure)
@@ -109,9 +110,9 @@
           * [Run the entire suite](#run-the-entire-suite)
           * [Run the previous test](#run-the-previous-test)
        * [Code-runner {#extensions-php-better-phpunit}](#code-runner-extensions-php-better-phpunit)
-          * [Configuration](#configuration)
+          * [Configuration Code-runner](#configuration-code-runner)
        * [PHP intelephense {#extensions-php-intelephense}](#php-intelephense-extensions-php-intelephense)
-          * [Configuration {#extensions-php-intelephense-configuration}](#configuration-extensions-php-intelephense-configuration)
+          * [Configuration PHP intelephense {#extensions-php-intelephense-configuration}](#configuration-php-intelephense-extensions-php-intelephense-configuration)
        * [Laravel Blade Snippets {#extensions-laravel-blade}](#laravel-blade-snippets-extensions-laravel-blade)
        * [PHP-CS-FIXER {#extensions-php-cs-fixer}](#php-cs-fixer-extensions-php-cs-fixer)
        * [PHP DocBlocker {#extensions-php-docblocker}](#php-docblocker-extensions-php-docblocker)
@@ -625,6 +626,19 @@ The <kbd>CTRL</kbd>-<kbd>D</kbd> shortcut will select the next occurrence: doubl
 
 I's not really like a `Search` and `Replace all` since here we can decide how many occurrences we wish to replace. It's more interactive.
 
+#### Insert prefix on each line {#multiple-cursors-insert-prefix}
+
+<kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> allow to enable multiple cursors, a nice use case is to select a bloc of lines and add a bullet so transform lines to a bullet list.
+
+Here is how to do:
+
+1. Select a bloc a lines
+2. Press <kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> to enable multiple cursors
+3. Press <kbd>Home</kbd> to put cursors at the beginning of each lines,
+4. Press <kbd>*</kbd> followed by a space to transform the list of lines to a bullet list.
+
+![Make a  bullet list](./020-working-with-code/060-multiple-cursors/images/make_bullet_list.gif)
+
 <!-- below, content of ./020-working-with-code/070-navigate-problems/readme.md -->
 
 ### Navigate between problems
@@ -958,7 +972,7 @@ Quickly translate text right in your code.
 
 ![Translate](./070-extensions/core/google-translate/images/translate.gif)
 
-##### Configuration
+##### Configuration Google Translate
 
 By setting your preferred language, you'll not be prompted each time about the target language.
 
@@ -1135,7 +1149,7 @@ Implements keyboard shortcuts for the Markdown language, allows the generation o
 
 * [https://github.com/DavidAnson/vscode-markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
 
-##### Configuration {#extensions-markdownlint-configuration}
+##### Configuration Markdownlint {#extensions-markdownlint-configuration}
 
 You can configure markdownlint to ignore some files or some rules.
 
@@ -1228,7 +1242,7 @@ Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` con
 
 With code-runner, open a PHP file and just run it from within vscode. Usefull to run samples scripts f.i.
 
-##### Configuration
+##### Configuration Code-runner
 
 Be sure to enable the `fileDirectoryAsCwd` setting. This will force `code-runner` to run the script by first setting the current directory to the one of the PHP file. Needed to make sure your require (like your autoloader) statements can retrieve files.
 
@@ -1245,7 +1259,7 @@ Be sure to enable the `fileDirectoryAsCwd` setting. This will force `code-runner
 
 > [https://github.com/bmewburn/vscode-intelephense](https://github.com/bmewburn/vscode-intelephense)
 
-##### Configuration {#extensions-php-intelephense-configuration}
+##### Configuration PHP intelephense {#extensions-php-intelephense-configuration}
 
 After installation, we need to disable the built-in PHP feature of VSCode.
 
@@ -1376,7 +1390,8 @@ Happy coloring 😉
 
 ### Keyboard shortcuts for Windows
 
-Cheat sheet for Windows users: [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+* Cheat sheet for Windows users: [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+* [Online and interactive tutorial](https://www.shortcutfoo.com/app/dojos/vscode-win)
 
 <!-- below, content of ./080-tips/regex/readme.md -->
 
