@@ -1,10 +1,7 @@
 {
     "strict": {
         "prefix": "strict",
-        "body": [
-            "declare (strict_types = 1);",
-            ""
-        ],
+        "body": ["declare (strict_types = 1);", ""],
         "description": "Add strict_types"
     }
 }

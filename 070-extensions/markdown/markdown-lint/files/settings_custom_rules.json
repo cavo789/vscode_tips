@@ -1,5 +1,3 @@
 {
-    "markdownlint.customRules": [
-        "C:\\Christophe\\.config\\.markdownlint.json"
-    ]
+    "markdownlint.customRules": ["C:\\Christophe\\.config\\.markdownlint.json"]
 }

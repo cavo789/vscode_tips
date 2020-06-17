@@ -19,7 +19,7 @@ Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` con
 * Place your cursor in/on the method you want to run
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
 * Select: `Better PHPUnit: run` (<kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>R</kbd>)
-  
+
 ## Run a test file
 
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
@@ -28,7 +28,7 @@ Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` con
 ## Run the entire suite
 
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`
-* Select: `Better PHPUnit: run suite` 
+* Select: `Better PHPUnit: run suite`
 
 ## Run the previous test
 

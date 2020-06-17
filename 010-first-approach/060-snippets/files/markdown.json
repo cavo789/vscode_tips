@@ -2,15 +2,11 @@
     "img": {
         "prefix": "img",
         "description": "Add an image tags",
-        "body": [
-            "![${1:caption}](./images/${2:image}.png)"
-        ]
+        "body": ["![${1:caption}](./images/${2:image}.png)"]
     },
     "url": {
         "prefix": "url",
         "description": "Add an url tags",
-        "body": [
-            "[${1:URL}](${1:URL})"
-        ]
+        "body": ["[${1:URL}](${1:URL})"]
     }
 }

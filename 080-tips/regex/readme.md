@@ -8,3 +8,25 @@
 * Replace by *let this field empty*
 
 ![Remove all empty lines](./images/replace_empty_lines.png)
+
+## Remove all lines except those matching a regex
+
+Imagine you've a big JSON file with f.i. a list of users like this:
+
+```json
+<!-- concat-md::include "./files/users.json" -->
+```
+
+From that list you wish to keep only lines with emails.
+
+The idea is to use a regex expression so we can match emails lines and use a negative search so not emails lines are selected:
+
+To match emails lines (with the carriage return at the end), we'll use `.*email.*\n`.
+
+For the use case, we'll search for `.*email.*\n` and replace by nothing: emails lines will be removed in the entire file.
+
+![Search and replace](./images/search_replace_regex.gif)
+
+Using the negative regex `^(?!.*email).*$\n` will match all lines except the ones containing the email word and, here too, if we search and replace by nothing, we'll remove all lines except emails:
+
+![Search and replace negative regex](./images/search_replace_negative_regex.gif)
