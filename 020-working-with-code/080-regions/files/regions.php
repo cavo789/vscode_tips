@@ -1,22 +1,4 @@
 <?php
-
-/**
- * BOSA Xxxxxxx project
- * -- Type your a quick description of your project --
- * php version 7.4
- *
- * @package   Xxxxxxx
- * @author    FirstName LastName <firstname.lastname@bosa.fgov.be>
- * @copyright 2018-2020 (c) SPF BOSA IOD AS - PHP Dev Team
- * @license   Proprietary
- *
- * @link https://code.bosa.fgov.be/dg-r_o/happ/happ-limesurvey
- * @wiki https://code.bosa.fgov.be/dg-r_o/happ/happ-limesurvey/-/wikis/home
- *
- * Latest version: https://code.bosa.fgov.be/##URL##
- * Documentation:  https://code.bosa.fgov.be/##URL##/-/wikis/home
- */
-
 function addRows(array $data): array
 {
     $result = [];

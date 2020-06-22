@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-06-17 21:07:09 -->
+<!-- Last refresh date: 2020-06-22 14:51:44 -->
 
 <!-- below, content of ./index.md -->
 
@@ -60,6 +60,7 @@
   * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
     * [Insert prefix on each line {#multiple-cursors-insert-prefix}](#insert-prefix-on-each-line-multiple-cursors-insert-prefix)
   * [Navigate between problems](#navigate-between-problems)
+  * [regions](#regions)
   * [Rename all](#rename-all)
 * [Some settings {#settings}](#some-settings-settings)
   * [Editor settings {#settings-editor}](#editor-settings-settings-editor)
@@ -631,6 +632,55 @@ Here is how to do:
 The list of problems detected by VS Code is displayed in a tab at the bottom of the screen, below the main editor.
 
 You can see the list of problems and navigate between each of them by just pressing <kbd>F8</kbd>.
+
+<!-- below, content of ./020-working-with-code/080-regions/readme.md -->
+
+### regions
+
+`Regions` are a very smart features to make code editing more readable.
+
+Consider the following function:
+
+```php
+<?php
+function addRows(array $data): array
+{
+    $result = [];
+
+    //region 1. Add row only once for the same surveyId/sessionId
+    foreach ($data as $participant) {
+        // A few dozen lines of code...
+        // A few dozen lines of code...
+        // A few dozen lines of code...
+    }
+
+    //endregion
+
+    //region 2. Add new participants
+    try {
+        // A few dozen lines of code...
+        // A few dozen lines of code...
+        // A few dozen lines of code...
+    } catch (\Exception $e) {
+        // Handle the exception
+    }
+
+    //endregion
+
+    //region 3. Prepare resulting array
+    // A few dozen lines of code...
+    // A few dozen lines of code...
+    // A few dozen lines of code...
+    // A few dozen lines of code...
+    //endregion
+
+    return $result;
+}
+```
+
+Your function is, logically, divided into three parts; the first to do checks, the second to do the job and the third to prepare the return data.
+
+Using `regions` inside your function make the code's logic really easy to understand.
 
 <!-- below, content of ./030-refactoring/readme.md -->
 
