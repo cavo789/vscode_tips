@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-06-22 14:51:44 -->
+<!-- Last refresh date: 2020-06-22 15:00:10 -->
 
 <!-- below, content of ./index.md -->
 
@@ -681,6 +681,8 @@ function addRows(array $data): array
 Your function is, logically, divided into three parts; the first to do checks, the second to do the job and the third to prepare the return data.
 
 Using `regions` inside your function make the code's logic really easy to understand.
+
+![Working with regions](./020-working-with-code/080-regions/images/regions.gif)
 
 <!-- below, content of ./030-refactoring/readme.md -->
 

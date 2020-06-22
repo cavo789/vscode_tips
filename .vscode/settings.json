@@ -1,8 +1,5 @@
 {
-    "cSpell.words": [
-        "kbd",
-        "phpunit"
-    ],
+    "cSpell.words": ["kbd", "phpunit"],
     "markdownlint.run": "onSave",
     "markdownlint.customRules": [],
     "workbench.colorCustomizations": {
@@ -24,4 +21,6 @@
         "titleBar.inactiveForeground": "#15202b99"
     },
     "peacock.color": "#589997",
+    "phpcbf.enable": false,
+    "phpcbf.documentFormattingProvider": false
 }

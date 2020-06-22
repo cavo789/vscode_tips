@@ -1,0 +1,278 @@
+{
+    "version": "1.0.0",
+    "editor": "code",
+    "force": {
+        "exclusions": {
+            "folders": [".cache", ".vscode", "node_modules", "tests", "vendor"],
+            "files": [".gitignore", ".phpunit.result.cache", "composer.lock", "LICENSE"]
+        }
+    },
+    "hooks": {
+        "pre-commit": {
+            "enabled": 1,
+            "unstage": {
+                "enabled": 1,
+                "patterns": [
+                    "/node_modules/",
+                    "/public/hot/",
+                    "/public/storage/",
+                    "/storage/*.key",
+                    "/vendor/",
+                    ".env",
+                    ".env.backup",
+                    ".php_cs.cache",
+                    ".phpunit.result.cache",
+                    "npm-debug.log",
+                    "yarn-error.log"
+                ]
+            },
+            "search-patterns": {
+                "enabled": 0,
+                "extensions": "php|phtml",
+                "stop_on_errors": 0,
+                "patterns": {
+                    "echo sprintf": "You can obtain the same result using printf (https://dev.to/klnjmm/5-bad-habits-to-lose-in-php-2j98#combine-the-echo-method-with-sprintf)",
+                    "console\\.(clear|dir|log|info|warn|error)": "Please consider to remove console.xxx statements",
+                    "count\\(\\$.*\\) \\> 0\\) \\{[.\\s]*foreach \\(\\$": "With a foreach, it is superfluous to test if the table is not empty (https://dev.to/klnjmm/5-bad-habits-to-lose-in-php-2j98#test-that-an-array-is-not-empty-before-loop)",
+                    "var_dump": "You've at least one occurence of a var_dump, consider to remove these statements"
+                }
+            },
+            "phplint": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml"
+            },
+            "php-cs-fixer": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml",
+                "binary": "php-cs-fixer.bat",
+                "config": "php-cs-fixer.php",
+                "copy_config_repo_init": 1,
+                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer",
+                "package": "composer global require friendsofphp/php-cs-fixer"
+            },
+            "phpcbf": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml",
+                "binary": "phpcbf.bat",
+                "config": "phpcs.xml",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "package": "composer global require squizlabs/php_codesniffer"
+            },
+            "phpcs": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml",
+                "binary": "phpcs.bat",
+                "config": "phpcs.xml",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "package": "composer global require squizlabs/php_codesniffer"
+            },
+            "phan": {
+                "enabled": 0,
+                "stop_on_errors": 0,
+                "extensions": "php|phtml",
+                "binary": "phan.bat",
+                "config": "phan.php",
+                "copy_config_repo_init": 1,
+                "url": "https://github.com/phan/phan",
+                "package": "composer global require phan/phan"
+            },
+            "phpstan": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml",
+                "binary": "phpstan.bat",
+                "config": "phpstan.neon",
+                "url": "https://github.com/phpstan/phpstan",
+                "package": "composer global require phpstan/phpstan"
+            },
+            "phpmd": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "php|phtml",
+                "binary": "phpmd.bat",
+                "config": "phpmd.xml",
+                "url": "https://phpmd.org/",
+                "package": "composer global require phpmd/phpmd"
+            },
+            "phpmnd": {
+                "enabled": 0,
+                "stop_on_errors": 0,
+                "extensions": "php|phtml",
+                "binary": "phpmnd.bat",
+                "config": "",
+                "url": "https://github.com/povils/phpmnd",
+                "package": "composer global require povils/phpmnd"
+            },
+            "markdownlint": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "md",
+                "binary": "markdownlint.cmd",
+                "config": "markdownlint.json",
+                "url": "https://github.com/DavidAnson/markdownlint",
+                "package": "npm install markdownlint --global"
+            },
+            "htmlhint": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "htm|html",
+                "binary": "htmlhint.cmd",
+                "config": ".htmlhintrc",
+                "url": "https://github.com/htmlhint/HTMLHint",
+                "package": "npm install htmlhint --global"
+            },
+            "htmllint": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "htm|html",
+                "binary": "htmllint.cmd",
+                "config": ".htmllintrc",
+                "url": "https://github.com/htmllint/htmllint-cli",
+                "package": "npm install htmllint-cli --global"
+            },
+            "htmlprettier": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "htm|html",
+                "binary": "prettier.cmd",
+                "config": ".prettierrc.js",
+                "url": "https://github.com/prettier/prettier",
+                "package": "npm install prettier --global"
+            },
+            "cssprettier": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "css",
+                "binary": "prettier.cmd",
+                "config": ".prettierrc.js",
+                "url": "https://github.com/prettier/prettier",
+                "package": "npm install prettier --global"
+            },
+            "jsprettier": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "js",
+                "binary": "prettier.cmd",
+                "config": ".prettierrc.js",
+                "url": "https://github.com/prettier/prettier",
+                "package": "npm install prettier --global"
+            },
+            "jsonprettier": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "json",
+                "binary": "prettier.cmd",
+                "config": ".prettierrc.js",
+                "url": "https://github.com/prettier/prettier",
+                "package": "npm install prettier --global"
+            },
+            "xmlprettier": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extensions": "wsdl|xml",
+                "binary": "prettier.cmd",
+                "config": ".prettierrc.js",
+                "url": "https://github.com/prettier/prettier",
+                "package": "npm install prettier @prettier/plugin-xml --global"
+            },
+            "shlint": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "extensions": "sh"
+            },
+            "csslint": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extension": "css",
+                "config": ".csslintrc",
+                "binary": "csslint.cmd",
+                "url": "https://github.com/CSSLint/csslint/",
+                "package": "npm install csslint --global"
+            },
+            "jslint": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "extension": "js",
+                "config": ".eslintrc",
+                "binary": "eslint.cmd",
+                "url": "https://github.com/eslint/eslint",
+                "package": "npm install eslint --global"
+            },
+            "export_code": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "binary": "export_code.cmd"
+            },
+            "concat-md": {
+                "enabled": 1,
+                "stop_on_errors": 1,
+                "binary": "concat-md.cmd"
+            },
+            "generate_wiki_sidebar": {
+                "enabled": 0,
+                "stop_on_errors": 1,
+                "binary": "%WRITING_DOC%\\sidebar\\generate_wiki_sidebar.cmd"
+            },
+            "tasks": [
+                "001-unstage",
+                "010-phplint",
+                "011-php-cs-fixer",
+                "012-phpcbf",
+                "013-phpcs",
+                "014-phan",
+                "015-phpstan",
+                "016-phpmd",
+                "017-phpmnd",
+                "030-htmlprettier",
+                "031-htmllint",
+                "032-htmlhint",
+                "040-csslint",
+                "041-cssprettier",
+                "050-jslint",
+                "051-jsprettier",
+                "061-jsonprettier",
+                "070-markdownlint",
+                "080-shlint",
+                "090-xmlprettier",
+                "100-search-patterns",
+                "300-export_code",
+                "310-concat-md",
+                "320-generate_wiki_sidebar"
+            ]
+        },
+        "prepare-commit-msg": {
+            "enabled": 1,
+            "check-use-of-prefix": {
+                "enabled": 1,
+                "patterns": {
+                    "chore: ": "Changes to the build process or auxiliary tools and libraries such as documentation generation",
+                    "docs: ": "Documentation only changes",
+                    "feat: ": "A new feature",
+                    "fix: ": "A bug fix",
+                    "init: ": "Only the first time for the initial upload",
+                    "perf: ": "A code change that improves performance",
+                    "refactor: ": "A code change that neither fixes a bug or adds a feature",
+                    "style: ": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)",
+                    "test: ": "Adding missing tests"
+                }
+            },
+            "emojis": {
+                "enabled": 1,
+                "patterns": {
+                    "^feat: ": ":eight_spoked_asterisk:",
+                    "^fix: ": ":muscle:",
+                    "^init: ": ":sparkles:",
+                    "^refactor: ": ":factory:"
+                }
+            },
+            "tasks": ["010-check-use-of-prefix", "050-emojis"]
+        }
+    },
+    "urls": {
+        "wiki": "https://code.bosa.fgov.be/dg-iod/dg-iod-resources/git_hooks/-/wikis/user_guide/BOSA_Git_Hooks"
+    }
+}

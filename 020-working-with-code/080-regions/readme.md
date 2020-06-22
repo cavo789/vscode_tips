@@ -12,3 +12,4 @@ Your function is, logically, divided into three parts; the first to do checks, t
 
 Using `regions` inside your function make the code's logic really easy to understand.
 
+![Working with regions](./images/regions.gif)
