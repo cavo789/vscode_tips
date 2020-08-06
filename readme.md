@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-06-22 15:00:10 -->
+<!-- Last refresh date: 2020-08-06 21:22:07 -->
 
 <!-- below, content of ./index.md -->
 
@@ -124,6 +124,9 @@
   * [Interface](#interface)
     * [Use color to identify projects](#use-color-to-identify-projects)
   * [Keyboard shortcuts for Windows](#keyboard-shortcuts-for-windows)
+  * [PHP-CS-FIXER {#php-cs-fixer}](#php-cs-fixer-php-cs-fixer)
+    * [Installation {#php-cs-fixer-installation}](#installation-php-cs-fixer-installation)
+    * [Remove unused imports {#php-cs-fixer-no-unused-imports}](#remove-unused-imports-php-cs-fixer-no-unused-imports)
   * [Search and replace - Regex](#search-and-replace-regex)
     * [Remove all empty lines](#remove-all-empty-lines)
     * [Remove all lines except those matching a regex](#remove-all-lines-except-those-matching-a-regex)
@@ -1425,6 +1428,44 @@ Happy coloring 😉
 
 * Cheat sheet for Windows users: [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 * [Online and interactive tutorial](https://www.shortcutfoo.com/app/dojos/vscode-win)
+
+<!-- below, content of ./080-tips/php-cs-fixer/readme.md -->
+
+### PHP-CS-FIXER {#php-cs-fixer}
+
+The use of [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) can help to maintain a proper code. More info below.
+
+#### Installation {#php-cs-fixer-installation}
+
+Install [PHP-CS-FIXER](https://github.com/FriendsOfPHP/PHP-CS-Fixer)<https://github.com/FriendsOfPHP/PHP-CS-Fixer.>
+
+Create your `php-cs-fixer.php` file and put it there your settings. More info below.
+
+Open VSCode, go to the settings page (press <kbd>CTRL</kbd>-<kbd>,</kbd>), search for `php-cs-fixer.config` and initialize the settings to the path of your `php-cs-fixer.php` (f.i. `C:\\config\\php-cs-fixer.php`).
+
+#### Remove unused imports {#php-cs-fixer-no-unused-imports}
+
+The `no_unused_imports` setting, when set to `true`, allow php-cs-fixer to detect unused imports like below and to remove it automatically.
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use Avonture\Pandoc;
+
+echo __DIR__;
+```
+
+This is done when you'll save your file.
+
+```php
+<?php
+return PhpCsFixer\Config::create()
+    ->setRules([
+        'no_unused_imports'=> true
+    ]);
+```
 
 <!-- below, content of ./080-tips/regex/readme.md -->
 
