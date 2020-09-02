@@ -1,6 +1,8 @@
-# Visual Studio Code - Tutorial
+<!-- markdownlint-disable MD033 MD041 -->
 
-![Banner](./images/banner.png)
+# Visual Studio Code - Tutorial and Tips & Tricks
+
+![Banner](./banner.svg)
 
 > Tutorial and collection of tips and tricks for Visual Studio Code
 

@@ -3,6 +3,6 @@
         "scope": "markdown",
         "prefix": "terminal",
         "body": ["`Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>)"],
-        "description": "Show Terminal keyboad Shortcuts"
+        "description": "Show Terminal keyboard Shortcuts"
     }
 }

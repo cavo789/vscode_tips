@@ -1,4 +1,5 @@
 <?php
+
 function addRows(array $data): array
 {
     $result = [];

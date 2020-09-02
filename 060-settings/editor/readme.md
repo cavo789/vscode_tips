@@ -42,7 +42,7 @@ When using snippets, pressing the Tab key will activate the conversion from the 
 <!-- concat-md::include "./files/tabCompletion.json" -->
 ```
 
-Spécifie la taille d'une tabulation :
+Set the width of a tabulation:
 
 ```json
 <!-- concat-md::include "./files/tabSize.json" -->

@@ -1,5 +1,3 @@
 # Syncing {#extensions-syncing}
 
-> [https://marketplace.visualstudio.com/items?itemName=nonoroazoro.syncing](https://marketplace.visualstudio.com/items?itemName=nonoroazoro.syncing)
-
-Synchronize all of your VSCode settings across multiple devices.
+Synchronization is now (August 2020) part of Visual Studio Code: [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync)

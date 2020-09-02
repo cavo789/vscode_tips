@@ -5,7 +5,7 @@
         "body": [
             "`Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>)"
         ],
-        "description": "Show Terminal keyboad Shortcut"
+        "description": "Show Terminal keyboard Shortcut"
     },
     "Command-palette-shortcut": {
         "scope": "markdown",

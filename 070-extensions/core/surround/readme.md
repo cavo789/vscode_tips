@@ -2,6 +2,6 @@
 
 > [https://marketplace.visualstudio.com/items?itemName=yatki.vscode-surround](https://marketplace.visualstudio.com/items?itemName=yatki.vscode-surround)
 
-On sélectionne un bloc de lignes de code puis, grâce à Surround, on peut l'inclure dans un `if/else`, `try/catch`, ... L'outil fait lui-même l'indentation du code.
+We select a block of lines of code and then, thanks to Surround, we can include it in an `if/else`, `try/catch`, ... The tool indents the code itself.
 
 ![VS Code - Surround](./images/demo.gif)

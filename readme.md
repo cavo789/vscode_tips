@@ -2,13 +2,15 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-08-06 21:22:07 -->
+<!-- Last refresh date: 2020-09-02 13:54:24 -->
 
 <!-- below, content of ./index.md -->
 
-# Visual Studio Code - Tutorial
+<!-- markdownlint-disable MD033 MD041 -->
 
-![Banner](./images/banner.png)
+# Visual Studio Code - Tutorial and Tips & Tricks
+
+![Banner](./banner.svg)
 
 > Tutorial and collection of tips and tricks for Visual Studio Code
 
@@ -339,7 +341,7 @@ Below an example from this `VSCode-Tips` project:
         "scope": "markdown",
         "prefix": "terminal",
         "body": ["`Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>)"],
-        "description": "Show Terminal keyboad Shortcuts"
+        "description": "Show Terminal keyboard Shortcuts"
     }
 }
 ```
@@ -646,6 +648,7 @@ Consider the following function:
 
 ```php
 <?php
+
 function addRows(array $data): array
 {
     $result = [];
@@ -763,7 +766,7 @@ When using snippets, pressing the Tab key will activate the conversion from the 
 }
 ```
 
-Spécifie la taille d'une tabulation :
+Set the width of a tabulation:
 
 ```json
 {
@@ -817,7 +820,7 @@ If you don't want to see certain files / folders in your :
 }
 ```
 
-<!-- below, content of ./060-settings/search/redme.md -->
+<!-- below, content of ./060-settings/search/readme.md -->
 
 ### Search settings {#settings-search}
 
@@ -1127,7 +1130,7 @@ Sorts lines of text.
 
 > [https://marketplace.visualstudio.com/items?itemName=yatki.vscode-surround](https://marketplace.visualstudio.com/items?itemName=yatki.vscode-surround)
 
-On sélectionne un bloc de lignes de code puis, grâce à Surround, on peut l'inclure dans un `if/else`, `try/catch`, ... L'outil fait lui-même l'indentation du code.
+We select a block of lines of code and then, thanks to Surround, we can include it in an `if/else`, `try/catch`, ... The tool indents the code itself.
 
 ![VS Code - Surround](./070-extensions/core/surround/images/demo.gif)
 
@@ -1135,9 +1138,7 @@ On sélectionne un bloc de lignes de code puis, grâce à Surround, on peut l'in
 
 #### Syncing {#extensions-syncing}
 
-> [https://marketplace.visualstudio.com/items?itemName=nonoroazoro.syncing](https://marketplace.visualstudio.com/items?itemName=nonoroazoro.syncing)
-
-Synchronize all of your VSCode settings across multiple devices.
+Synchronization is now (August 2020) part of Visual Studio Code: [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync)
 
 <!-- below, content of ./070-extensions/core/todo-tree/readme.md -->
 
@@ -1276,7 +1277,7 @@ Should be the absolute path to the `phpunit.bat` file and your `phpunit.xml` con
 
 > [https://github.com/formulahendry/vscode-code-runner](https://github.com/formulahendry/vscode-code-runner)
 
-With code-runner, open a PHP file and just run it from within vscode. Usefull to run samples scripts f.i.
+With code-runner, open a PHP file and just run it from within vscode. Useful to run samples scripts f.i.
 
 ##### Configuration Code-runner
 
@@ -1657,5 +1658,7 @@ All the best things about Visual Studio Code that nobody ever bothered to tell y
 [MIT](/blob/master/LICENSE)
 
 <!-- below, content of ./includes/footnotes.md -->
+
+<!-- markdownlint-disable MD033 MD041 -->
 
 [^symbol]: A symbol is the name of a constant, of a function, part of a title (for a markdown document f.i.), ... You can get access to symbols of an opened file by using the <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>O</kbd> keyboard shortcut.

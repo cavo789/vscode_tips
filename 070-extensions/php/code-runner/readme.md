@@ -2,7 +2,7 @@
 
 > [https://github.com/formulahendry/vscode-code-runner](https://github.com/formulahendry/vscode-code-runner)
 
-With code-runner, open a PHP file and just run it from within vscode. Usefull to run samples scripts f.i.
+With code-runner, open a PHP file and just run it from within vscode. Useful to run samples scripts f.i.
 
 ## Configuration Code-runner
 
