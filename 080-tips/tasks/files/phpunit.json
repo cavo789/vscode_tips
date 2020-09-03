@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "phpunit: run tests\\Api",
+            "type": "process",
+            "command": "${workspaceFolder}\\vendor\\bin\\phpunit.bat",
+            "args": [
+                "${workspaceFolder}\\tests\\Api"
+            ],
+            "presentation": {
+                "echo": true,
+                "panel":"new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

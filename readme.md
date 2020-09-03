@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-09-02 13:54:24 -->
+<!-- Last refresh date: 2020-09-03 10:33:10 -->
 
 <!-- below, content of ./index.md -->
 
@@ -132,7 +132,9 @@
   * [Search and replace - Regex](#search-and-replace-regex)
     * [Remove all empty lines](#remove-all-empty-lines)
     * [Remove all lines except those matching a regex](#remove-all-lines-except-those-matching-a-regex)
-  * [Custom tasks](#custom-tasks)
+  * [Custom tasks {#custom-tasks}](#custom-tasks-custom-tasks)
+    * [Run a DOS batch {#custom-tasks-batch}](#run-a-dos-batch-custom-tasks-batch)
+    * [Run PHP-Unit {#custom-tasks-phpunit}](#run-php-unit-custom-tasks-phpunit)
 * [Troubleshooting {#troubleshooting}](#troubleshooting-troubleshooting)
   * [Intelephense {#troubleshooting-intelephense}](#intelephense-troubleshooting-intelephense)
   * [Phan {#troubleshooting-phan}](#phan-troubleshooting-phan)
@@ -1531,7 +1533,9 @@ Using the negative regex `^(?!.*email).*$\n` will match all lines except the one
 
 <!-- below, content of ./080-tips/tasks/readme.md -->
 
-### Custom tasks
+<!-- markdownlint-disable MD033 -->
+
+### Custom tasks {#custom-tasks}
 
 > [https://code.visualstudio.com/docs/editor/tasks](https://code.visualstudio.com/docs/editor/tasks)
 >
@@ -1540,6 +1544,8 @@ Using the negative regex `^(?!.*email).*$\n` will match all lines except the one
 By creating a  `./.vscode/tasks.json`, it's possible to add custom tasks to Visual Studio Code.
 
 A custom task can be running PHP Unit tests or any other shell commands.
+
+#### Run a DOS batch {#custom-tasks-batch}
 
 The following example define a task called `concat-md`, it's a shell command (i.e. a DOS task).
 
@@ -1570,6 +1576,35 @@ All your custom tasks will be accessible in the `Tasks: Run task` list.
 Tip: it's possible to specify more than one command using the `&&` syntax; f.i. `"command": "cd tests/ && run_all.cmd",`
 
 ![Running the pre-commit custom task](./080-tips/tasks/images/pre-commit.gif)
+
+#### Run PHP-Unit {#custom-tasks-phpunit}
+
+Another example can be to run PHP Unit with some command line options.
+
+The example below defines a `phpunit: run tests\Api` task so we can execute all tests under the `Api` folder. We can of course use any command line options supported by PHP Unit.
+
+```json
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "phpunit: run tests\\Api",
+            "type": "process",
+            "command": "${workspaceFolder}\\vendor\\bin\\phpunit.bat",
+            "args": [
+                "${workspaceFolder}\\tests\\Api"
+            ],
+            "presentation": {
+                "echo": true,
+                "panel":"new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+```
+
+Note: the `type` defined in the JSON file is `process`, this means that the defined `command` will be executed within vscode, in the `Terminal`. The process should then be an executable and any parameters have to be defined in the `args` array;
 
 <!-- below, content of ./090-troubleshooting/readme.md -->
 
