@@ -80,3 +80,7 @@ By adding a breakpoint, it's possible to edit it and set a condition.
 Instead of writing here and there `echo '...';` or `console.log(...);` statements, VS Code can do it for us:
 
 ![Add a logpoint](./images/logpoint.gif)
+
+### Also read
+
+You can find more information on this repository, from Microsoft: [https://github.com/Microsoft/vscode-recipes/tree/master/PHP](https://github.com/Microsoft/vscode-recipes/tree/master/PHP)
