@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-09-03 10:33:10 -->
+<!-- Last refresh date: 2020-11-04 23:38:49 -->
 
 <!-- below, content of ./index.md -->
 
@@ -58,12 +58,15 @@
       * [Use inside vscode](#use-inside-vscode)
       * [Breakpoint](#breakpoint)
       * [Logpoint](#logpoint)
+      * [Also read](#also-read)
   * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
   * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
     * [Insert prefix on each line {#multiple-cursors-insert-prefix}](#insert-prefix-on-each-line-multiple-cursors-insert-prefix)
   * [Navigate between problems](#navigate-between-problems)
   * [regions](#regions)
-  * [Rename all](#rename-all)
+  * [Renaming](#renaming)
+    * [a symbol](#a-symbol)
+    * [a class](#a-class)
 * [Some settings {#settings}](#some-settings-settings)
   * [Editor settings {#settings-editor}](#editor-settings-settings-editor)
   * [Files settings {#settings-files}](#files-settings-settings-files)
@@ -572,6 +575,10 @@ Instead of writing here and there `echo '...';` or `console.log(...);` statement
 
 ![Add a logpoint](./020-working-with-code/045-xdebug/images/logpoint.gif)
 
+##### Also read
+
+You can find more information on this repository, from Microsoft: [https://github.com/Microsoft/vscode-recipes/tree/master/PHP](https://github.com/Microsoft/vscode-recipes/tree/master/PHP)
+
 <!-- below, content of ./020-working-with-code/050-php-formatting/readme.md -->
 
 ### PHP Formatting {#php-formatting}
@@ -696,13 +703,31 @@ Using `regions` inside your function make the code's logic really easy to unders
 
 <!-- below, content of ./030-refactoring/010-rename/readme.md -->
 
-### Rename all
+### Renaming
 
-1. Select the text to rename like a variable name.
-2. Once selected, press <kbd>CTRL</kbd>-<kbd>F2</kbd>. All occurrences of that text will be selected.
-3. Type the new value.
+> https://marketplace.visualstudio.com/items?itemName=st-pham.php-refactor-tool
 
-![Rename All](./030-refactoring/010-rename/images/rename.gif)
+For PHP, for install the `PHP Refactor Tool` addon.
+
+#### a symbol
+
+1. Select a property,
+2. Press <kbd>F2</kbd> (or choose `Rename Symbol` in the Command palette (press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>))
+3. Rename the property
+4. Select `Update Getter name and Setter name`
+5. Press <kbd>Enter</kbd>
+
+![Renaming a symbol](./030-refactoring/010-rename/images/rename_symbol.gif)
+
+Thanks to `PHP Refactor Tool`, all occurences of the property will be renamed, the getter and the setter and every where these functions were used too. In all files of your project.
+
+#### a class
+
+Anywhere in your code (in the class itself or where you use it), select the class name, press <kbd>F2</kbd>, rename it and press <kbd>Enter</kbd>.
+
+Name will be changed everywhere, the name of the file will be changed too as you can see here below.
+
+![Renaming a class](./030-refactoring/010-rename/images/rename_class.gif)
 
 <!-- below, content of ./060-settings/readme.md -->
 
