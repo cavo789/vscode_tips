@@ -49,6 +49,10 @@ Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ign
 <!-- concat-md::include "./files/launch.json" -->
 ```
 
+Note: the `internalConsoleOptions` setting will allow to immediately open the debug console in a new terminal, pretty easy.
+
+The list of all settings can be retrieved here: [https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes](https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes).
+
 ### Use inside vscode
 
 Open your PHP file and add breakpoints. To do so, click on the line in your code where you want that the browser needs to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
@@ -80,6 +84,13 @@ By adding a breakpoint, it's possible to edit it and set a condition.
 Instead of writing here and there `echo '...';` or `console.log(...);` statements, VS Code can do it for us:
 
 ![Add a logpoint](./images/logpoint.gif)
+
+### Debug keyboard shortcuts
+
+* Show the Run pane (that pane contains all your variables so you can see, at runtime, their values): <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>D</kbd>
+* Toggle breakpoint: <kbd>F9</kbd>
+* Step Info: <kbd>F11</kbd>
+* Start / Continue: <kbd>F5</kbd>
 
 ### Also read
 

@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-04 23:38:49 -->
+<!-- Last refresh date: 2020-11-13 13:50:20 -->
 
 <!-- below, content of ./index.md -->
 
@@ -58,6 +58,7 @@
       * [Use inside vscode](#use-inside-vscode)
       * [Breakpoint](#breakpoint)
       * [Logpoint](#logpoint)
+      * [Debug keyboard shortcuts](#debug-keyboard-shortcuts)
       * [Also read](#also-read)
   * [PHP Formatting {#php-formatting}](#php-formatting-php-formatting)
   * [Multiple cursors {#multiple-cursors}](#multiple-cursors-multiple-cursors)
@@ -100,6 +101,7 @@
     * [Sort lines {#extensions-sort-lines}](#sort-lines-extensions-sort-lines)
     * [Surround {#extensions-surround}](#surround-extensions-surround)
     * [Syncing {#extensions-syncing}](#syncing-extensions-syncing)
+    * [TabNine {#extensions-tabnine}](#tabnine-extensions-tabnine)
     * [Todo Tree {#extensions-todo-tree}](#todo-tree-extensions-todo-tree)
     * [vscode-icons {#extensions-vscode-icons}](#vscode-icons-extensions-vscode-icons)
   * [Javascript {#extensions-javascript}](#javascript-extensions-javascript)
@@ -537,11 +539,16 @@ Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ign
             "type": "php",
             "request": "launch",
             "port": 9000,
-            "ignore": ["**/vendor/**/*.php"]
+            "ignore": ["**/vendor/**/*.php"],
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
 ```
+
+Note: the `internalConsoleOptions` setting will allow to immediately open the debug console in a new terminal, pretty easy.
+
+The list of all settings can be retrieved here: [https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes](https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes).
 
 ##### Use inside vscode
 
@@ -574,6 +581,13 @@ By adding a breakpoint, it's possible to edit it and set a condition.
 Instead of writing here and there `echo '...';` or `console.log(...);` statements, VS Code can do it for us:
 
 ![Add a logpoint](./020-working-with-code/045-xdebug/images/logpoint.gif)
+
+##### Debug keyboard shortcuts
+
+* Show the Run pane (that pane contains all your variables so you can see, at runtime, their values): <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>D</kbd>
+* Toggle breakpoint: <kbd>F9</kbd>
+* Step Info: <kbd>F11</kbd>
+* Start / Continue: <kbd>F5</kbd>
 
 ##### Also read
 
@@ -1166,6 +1180,16 @@ We select a block of lines of code and then, thanks to Surround, we can include 
 #### Syncing {#extensions-syncing}
 
 Synchronization is now (August 2020) part of Visual Studio Code: [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync)
+
+<!-- below, content of ./070-extensions/core/tabnine/readme.md -->
+
+#### TabNine {#extensions-tabnine}
+
+AMAZING code completion extension.
+
+TabNine is using AI to learn how you are using vscode (no matter the used language) and will predict the next words.
+
+This addon is really a MUST HAVE: [https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 
 <!-- below, content of ./070-extensions/core/todo-tree/readme.md -->
 
