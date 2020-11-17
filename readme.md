@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-13 13:50:20 -->
+<!-- Last refresh date: 2020-11-17 23:11:54 -->
 
 <!-- below, content of ./index.md -->
 
@@ -86,6 +86,7 @@
     * [Code Spell Checker {#extensions-code-spell-checker}](#code-spell-checker-extensions-code-spell-checker)
     * [EditorConfig {#extensions-editorconfig}](#editorconfig-extensions-editorconfig)
     * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
+    * [git-project-manager {#extensions-git-project-manager}](#git-project-manager-extensions-git-project-manager)
     * [Gitlens {#extensions-gitlens}](#gitlens-extensions-gitlens)
     * [Vscode Google Translate {#extensions-google-translate}](#vscode-google-translate-extensions-google-translate)
       * [Configuration Google Translate](#configuration-google-translate)
@@ -1035,6 +1036,26 @@ EditorConfig extension for Visual Studio Code [https://editorconfig.org/](https:
 Allows you to group shortcuts to files that, for example, you often have to open.
 
 ![Favorites](./070-extensions/core/favorites/images/favorites.jpg)
+
+<!-- below, content of ./070-extensions/core/git-project-manager/readme.md -->
+
+#### git-project-manager {#extensions-git-project-manager}
+
+> [https://github.com/felipecaputo/git-project-manager](https://github.com/felipecaputo/git-project-manager)
+
+A Git Project Manager extension for vsCode.
+
+Using GPM, it's now really easy to open a project: just press <kbd>CTRL</kbd>-<kbd>P</kbd> to open the Command Palette and select `GPM: Open Git Project`. Then you'll get the list of all folders on your disk with Git repositories.
+
+First, you'll need to configure the `gitProjectManager.baseProjectsFolders` setting with the list of directories with your project; let's say `C:\Christophe\Repository`. You can mention several folders if you desire to.
+
+You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can defined the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
+
+```json
+<!-- concat-md::json "./files/settings.json" -->
+```
+
+![git-project-manager](./070-extensions/core/git-project-manager/images/GPM.gif)
 
 <!-- below, content of ./070-extensions/core/gitlens/readme.md -->
 
