@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-17 23:11:54 -->
+<!-- Last refresh date: 2020-11-17 23:26:25 -->
 
 <!-- below, content of ./index.md -->
 
@@ -126,6 +126,7 @@
     * [PHP-CS-FIXER {#extensions-php-cs-fixer}](#php-cs-fixer-extensions-php-cs-fixer)
     * [PHP DocBlocker {#extensions-php-docblocker}](#php-docblocker-extensions-php-docblocker)
     * [PHP Extension Pack {#extensions-php-extension-pack}](#php-extension-pack-extensions-php-extension-pack)
+    * [PHP getters and setters {#extensions-php-getters-setters}](#php-getters-and-setters-extensions-php-getters-setters)
     * [PHP IntelliSense {#extensions-php-intellisense}](#php-intellisense-extensions-php-intellisense)
 * [Tips](#tips)
   * [editorconfig](#editorconfig)
@@ -1414,6 +1415,20 @@ Allows to generate documentation blocks of classes, methods, ...
 > [https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack)
 
 Includes the most important extensions to get you started with PHP development in Visual Studio Code.
+
+<!-- below, content of ./070-extensions/php/php-getters-setters/readme.md -->
+
+#### PHP getters and setters {#extensions-php-getters-setters}
+
+> [https://github.com/phproberto/vscode-php-getters-setters](https://github.com/phproberto/vscode-php-getters-setters)
+
+Create a new property in your class; right click on it and choose `Insert PHP Getter & Setter` to generate PHP code for both actions.
+
+Really easy...
+
+![Insert PHP Getter & Setter](./070-extensions/php/php-getters-setters/images/insert-php-getter-setter.jpg)
+
+The extension can be configured (see [https://github.com/phproberto/vscode-php-getters-setters#extension-settings](https://github.com/phproberto/vscode-php-getters-setters#extension-settings)) and, if you wish, you can redefine the code of the Setter for instance (as an example, you can decide to not return the value).
 
 <!-- below, content of ./070-extensions/php/php-intellisense/readme.md -->
 
