@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-17 23:26:25 -->
+<!-- Last refresh date: 2020-11-19 23:41:02 -->
 
 <!-- below, content of ./index.md -->
 
@@ -83,6 +83,7 @@
     * [Bookmarks {#extensions-bookmarks}](#bookmarks-extensions-bookmarks)
     * [Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}](#bracket-pair-colorizer-extensions-bracket-pair-colorizer)
     * [Change case {#extensions-change-case}](#change-case-extensions-change-case)
+    * [Code runner {#extension-code-runner}](#code-runner-extension-code-runner)
     * [Code Spell Checker {#extensions-code-spell-checker}](#code-spell-checker-extensions-code-spell-checker)
     * [EditorConfig {#extensions-editorconfig}](#editorconfig-extensions-editorconfig)
     * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
@@ -128,6 +129,7 @@
     * [PHP Extension Pack {#extensions-php-extension-pack}](#php-extension-pack-extensions-php-extension-pack)
     * [PHP getters and setters {#extensions-php-getters-setters}](#php-getters-and-setters-extensions-php-getters-setters)
     * [PHP IntelliSense {#extensions-php-intellisense}](#php-intellisense-extensions-php-intellisense)
+    * [PHP Namespace Resolver {extension-php-namespace-resolver}](#php-namespace-resolver-extension-php-namespace-resolver)
 * [Tips](#tips)
   * [editorconfig](#editorconfig)
   * [Interface](#interface)
@@ -1008,6 +1010,16 @@ Easily change the case of variable names; like switching to pascal case, camelCa
 
 ![Change case](./070-extensions/core/change-case/images/change-case.gif)
 
+<!-- below, content of ./070-extensions/core/code-runner/readme.md -->
+
+#### Code runner {#extension-code-runner}
+
+> [https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+
+With Code runner, open a supported code source (like PHP or Python) and press  <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>R</kbd> to run that code and get the result in the console. You even don't need to save the file.
+
+![Code run](./070-extensions/core/code-runner/images/code-run.gif)
+
 <!-- below, content of ./070-extensions/core/code-spell-checker/readme.md -->
 
 #### Code Spell Checker {#extensions-code-spell-checker}
@@ -1408,6 +1420,10 @@ php-cs-fixer is using a `.php-cs` file for his configuration; there are a lot of
 
 Allows to generate documentation blocks of classes, methods, ...
 
+Essential extension for any PHP programmer because it allows to generate docblocks to document methods, properties, constants, ... in a PHP source code.
+
+![PHP DocBlock](./070-extensions/php/php-docblocker/images/php-docblock.gif)
+
 <!-- below, content of ./070-extensions/php/php-extension-pack/reame.md -->
 
 #### PHP Extension Pack {#extensions-php-extension-pack}
@@ -1439,6 +1455,16 @@ The extension can be configured (see [https://github.com/phproberto/vscode-php-g
 Advanced PHP IntelliSense for Visual Studio Code.
 
 ![PHP IntelliSense](./070-extensions/php/php-intellisense/images/signatureHelp.gif)
+
+<!-- below, content of ./070-extensions/php/php-namespace-resolver/readme.md -->
+
+#### PHP Namespace Resolver {extension-php-namespace-resolver}
+
+> [https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver](https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver)
+
+In a PHP file, right-click on a class name and PHP Namespace Resolver will search where that class is defined (based on your `composer.json` file). If there is only one occurrence, the class will be immediately added in a `use` command. Otherwise, you'll be prompted to select the desired one.
+
+![PHP Namespace Resolver](./070-extensions/php/php-namespace-resolver/images/php-namespace-resolver.gif)
 
 <!-- below, content of ./080-tips/readme.md -->
 
