@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-19 23:41:02 -->
+<!-- Last refresh date: 2020-11-22 22:14:08 -->
 
 <!-- below, content of ./index.md -->
 
@@ -109,6 +109,7 @@
   * [Javascript {#extensions-javascript}](#javascript-extensions-javascript)
     * [ESLint {#extensions-eslint}](#eslint-extensions-eslint)
   * [Markdown {#extensions-markdown}](#markdown-extensions-markdown)
+    * [Emoji {#extensions-emoji}](#emoji-extensions-emoji)
     * [Markdown All in One {#extensions-markdown-all-in-one}](#markdown-all-in-one-extensions-markdown-all-in-one)
     * [Markdownlint {#extensions-markdownlint}](#markdownlint-extensions-markdownlint)
       * [Configuration Markdownlint {#extensions-markdownlint-configuration}](#configuration-markdownlint-extensions-markdownlint-configuration)
@@ -1260,6 +1261,16 @@ Javascript linter
 <!-- below, content of ./070-extensions/markdown/readme.md -->
 
 ### Markdown {#extensions-markdown}
+
+<!-- below, content of ./070-extensions/markdown/insert-emoji/readme.md -->
+
+#### Emoji {#extensions-emoji}
+
+> [https://marketplace.visualstudio.com/items?itemName=perkovec.emoji](https://marketplace.visualstudio.com/items?itemName=perkovec.emoji)
+
+Insert an emoji without leaving the editor. The
+
+![Insert emoji](./070-extensions/markdown/insert-emoji/images/insert-emoji.gif)
 
 <!-- below, content of ./070-extensions/markdown/markdown-all-in-one/readme.md -->
 
