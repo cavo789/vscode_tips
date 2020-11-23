@@ -8,7 +8,7 @@ Using GPM, it's now really easy to open a project: just press <kbd>CTRL</kbd>-<k
 
 First, you'll need to configure the `gitProjectManager.baseProjectsFolders` setting with the list of directories with your project; let's say `C:\Christophe\Repository`. You can mention several folders if you desire to.
 
-You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can defined the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
+You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can define the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
 
 ```json
 <!-- concat-md::json "./files/settings.json" -->

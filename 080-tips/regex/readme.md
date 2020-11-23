@@ -19,9 +19,9 @@ Imagine you've a big JSON file with f.i. a list of users like this:
 
 From that list you wish to keep only lines with emails.
 
-The idea is to use a regex expression so we can match emails lines and use a negative search so not emails lines are selected:
+The idea is to use a regex expression so we can match email lines and use a negative search so not email lines are selected:
 
-To match emails lines (with the carriage return at the end), we'll use `.*email.*\n`.
+To match email lines (with the carriage return at the end), we'll use `.*email.*\n`.
 
 For the use case, we'll search for `.*email.*\n` and replace by nothing: emails lines will be removed in the entire file.
 

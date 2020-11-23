@@ -1,1 +1,1 @@
-# Colouring of source codes according to the language {#extensions-highlight}
+# Coloring of source codes according to the language {#extensions-highlight}

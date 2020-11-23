@@ -9,7 +9,7 @@ For instance, if the project has never been sent to git, you can initialize the 
 * Open the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>). You'll be placed in the root folder of the project;
 * `git init` to initialize your local repository;
 * `git add .` to add all files to the staging area of your repository. Visual Studio Code will change the color of any files and folders in the tree-view to reflect that files are now in the staging area and ready to be committed;
-* `git commit -m 'My initial commit'` to commit everything to the local repository. Color in the tree-view will be back in white (no more green) meaning that files are now placed in the repo.;
+* `git commit -m 'My initial commit'` to commit everything to the local repository. Color in the tree-view will be back in white (no greener) meaning that files are now placed in the repo.;
 
 If you now change a file by appending a new function, removing part of the code, changing a variable, ... VSCode will display a color (green, red, ...) in the left margin of the code editor reflecting the change.
 
