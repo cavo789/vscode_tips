@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-23 21:24:18 -->
+<!-- Last refresh date: 2020-11-23 21:25:49 -->
 
 <!-- below, content of ./index.md -->
 
@@ -1855,6 +1855,7 @@ All the best things about Visual Studio Code that nobody ever bothered to tell y
 
 You can create the same list by running ` code --list-extensions | % { "code --install-extension $_" }` in a `Windows Powershell` prompt.
 
+```text
 code --install-extension aaron-bond.better-comments
 code --install-extension alefragnani.Bookmarks
 code --install-extension bajdzis.vscode-twig-pack
@@ -1921,6 +1922,7 @@ code --install-extension whatwedo.twig
 code --install-extension Christophe Avonture.writing-documentation-snippets
 code --install-extension yatki.vscode-surround
 code --install-extension yzhang.markdown-all-in-one
+```
 
 <!-- below, content of ./999-license/readme.md -->
 
