@@ -49,7 +49,10 @@ Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ign
 <!-- concat-md::include "./files/launch.json" -->
 ```
 
-Note: the `internalConsoleOptions` setting will allow to immediately open the debug console in a new terminal, pretty easy.
+Notes:
+
+* `ignore` is used to indicate to vscode to not stop on any error, exceptions, ... that can be retrieved in specific files or folders. If you're using dependencies, it's a good idea to not stop in files under the `vendor/` folder. Also, if you're using `.phar` archives for instance (let's say in folder `bin/`, it's also a good idea to ignore that folder / files),
+* `internalConsoleOptions` will allow to immediately open the debug console in a new terminal, pretty easy.
 
 The list of all settings can be retrieved here: [https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes](https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes).
 

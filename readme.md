@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-11-13 13:50:20 -->
+<!-- Last refresh date: 2020-12-01 16:07:27 -->
 
 <!-- below, content of ./index.md -->
 
@@ -539,14 +539,17 @@ Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ign
             "type": "php",
             "request": "launch",
             "port": 9000,
-            "ignore": ["**/vendor/**/*.php"],
+            "ignore": ["**/bin/**/*","**/vendor/**/*.php"],
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
 ```
 
-Note: the `internalConsoleOptions` setting will allow to immediately open the debug console in a new terminal, pretty easy.
+Notes:
+
+* `ignore` is used to indicate to vscode to not stop on any error, exceptions, ... that can be retrieved in specific files or folders. If you're using dependencies, it's a good idea to not stop in files under the `vendor/` folder. Also, if you're using `.phar` archives for instance (let's say in folder `bin/`, it's also a good idea to ignore that folder / files),
+* `internalConsoleOptions` will allow to immediately open the debug console in a new terminal, pretty easy.
 
 The list of all settings can be retrieved here: [https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes](https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes).
 

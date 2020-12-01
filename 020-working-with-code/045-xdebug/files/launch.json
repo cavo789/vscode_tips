@@ -6,7 +6,7 @@
             "type": "php",
             "request": "launch",
             "port": 9000,
-            "ignore": ["**/vendor/**/*.php"],
+            "ignore": ["**/bin/**/*","**/vendor/**/*.php"],
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
