@@ -20,7 +20,7 @@ I's not really like a `Search` and `Replace all` since here we can decide how ma
 
 Here is how to do:
 
-1. Select a bloc a lines
+1. Select a bloc a line
 2. Press <kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> to enable multiple cursors
 3. Press <kbd>Home</kbd> to put cursors at the beginning of each lines,
 4. Press <kbd>*</kbd> followed by a space to transform the list of lines to a bullet list.

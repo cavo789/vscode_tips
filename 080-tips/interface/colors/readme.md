@@ -6,7 +6,7 @@ Colors have to be set in the `.vscode/settings.json` file in the project root fo
 <!-- concat-md::include "./files/settings.json" -->
 ```
 
-To open that settings file, just go to your `Workspace settings` page.
+To open that setting file, just go to your `Workspace settings` page.
 
 ![Interface colors](./images/interface_colors.png)
 

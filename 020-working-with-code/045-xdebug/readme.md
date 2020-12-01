@@ -8,7 +8,7 @@ URL: [https://xdebug.org](https://xdebug.org/)
 
 * Open `http://localhost/?phpinfo=1` and make <kbd>CTRL</kbd>-<kbd>A</kbd>/<kbd>CTRL</kbd>-<kbd>C</kbd>
 * Open `https://xdebug.org/wizard.php` and <kbd>CTRL</kbd><kbd>V</kbd> there
-* Click on the `Analyse my phpinfo() output` button
+* Click on the `Analyze my phpinfo() output` button
 
 Follow installation steps:
 
@@ -43,7 +43,7 @@ Tutorial by Microsoft: `https://code.visualstudio.com/docs/editor/debugging#_lau
 
 ### Settings
 
-Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who make possible to ignore certain files from a debugger perspective. Here, ask to not go into vendors scripts (and stay in our own scripts):
+Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who makes possible to ignore certain files from a debugger perspective. Here, ask not to go into vendors scripts (and stay in our own scripts):
 
 ```json
 <!-- concat-md::include "./files/launch.json" -->
@@ -58,7 +58,7 @@ The list of all settings can be retrieved here: [https://code.visualstudio.com/d
 
 ### Use inside vscode
 
-Open your PHP file and add breakpoints. To do so, click on the line in your code where you want that the browser needs to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
+Open your PHP file and add breakpoints. To do so, click on the line in your code where you want the browser to need to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
 
 ![Red bullet](./images/xdebug_visual_studio_breakpoints.png)
 

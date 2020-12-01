@@ -30,7 +30,7 @@ Tip: it's possible to specify more than one command using the `&&` syntax; f.i. 
 
 ## Run PHP-Unit {#custom-tasks-phpunit}
 
-Another example can be to run PHP Unit with some command line options.
+Another example can be to run PHP Unit with some command-line options.
 
 The example below defines a `phpunit: run tests\Api` task so we can execute all tests under the `Api` folder. We can of course use any command line options supported by PHP Unit.
 

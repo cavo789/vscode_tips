@@ -1,0 +1,10 @@
+{
+    "gitProjectManager.baseProjectsFolders": [
+        "C:\\Christophe\\Repository"
+    ],
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "gitProjectManager.ignoredFolders": ["node_modules","vendor"],
+    "gitProjectManager.maxDepthRecursion": 2,
+    "gitProjectManager.checkRemoteOrigin": false,
+    "gitProjectManager.openInNewWindow": false
+}

@@ -8,7 +8,7 @@ You can choose for a DOS terminal, Powershell or bash one. Just select the `Sele
 
 ![Terminal](./images/terminal.png)
 
-Note: by clicking on the `+` button, we can create as many terminal we want.
+Note: by clicking on the `+` button, we can create as many terminals we want.
 
 ## Extensions {#terminal-extensions}
 

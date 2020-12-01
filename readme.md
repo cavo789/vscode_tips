@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-01 16:07:27 -->
+<!-- Last refresh date: 2020-12-01 16:10:28 -->
 
 <!-- below, content of ./index.md -->
 
@@ -27,7 +27,7 @@
   * [Snippets {#snippets}](#snippets-snippets)
     * [Global {#snippets-global}](#global-snippets-global)
       * [Built-in {#snippets-built-in}](#built-in-snippets-built-in)
-      * [User defined ones {#snippets-user-defined}](#user-defined-ones-snippets-user-defined)
+      * [User-defined ones {#snippets-user-defined}](#user-defined-ones-snippets-user-defined)
       * [Make snippets configurable {#snippets-user-placeholders}](#make-snippets-configurable-snippets-user-placeholders)
       * [Using variables](#using-variables)
       * [Settings {#snippets-settings}](#settings-snippets-settings)
@@ -76,6 +76,7 @@
   * [Window settings {#settings-window}](#window-settings-settings-window)
   * [Workbench settings {#settings-workbench}](#workbench-settings-settings-workbench)
 * [Extensions {#extensions}](#extensions-extensions)
+  * [Get the list of all installed extensions {extensions-list-extensions}](#get-the-list-of-all-installed-extensions-extensions-list-extensions)
   * [Extend core features of Visual Studio Code {#extensions-core}](#extend-core-features-of-visual-studio-code-extensions-core)
     * [Active File In StatusBar {#extensions-active-file-statusbar}](#active-file-in-statusbar-extensions-active-file-statusbar)
     * [Autofold {#extensions-autofold}](#autofold-extensions-autofold)
@@ -83,13 +84,15 @@
     * [Bookmarks {#extensions-bookmarks}](#bookmarks-extensions-bookmarks)
     * [Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}](#bracket-pair-colorizer-extensions-bracket-pair-colorizer)
     * [Change case {#extensions-change-case}](#change-case-extensions-change-case)
+    * [Code runner {#extension-code-runner}](#code-runner-extension-code-runner)
     * [Code Spell Checker {#extensions-code-spell-checker}](#code-spell-checker-extensions-code-spell-checker)
     * [EditorConfig {#extensions-editorconfig}](#editorconfig-extensions-editorconfig)
     * [Favorites {#extensions-favorites}](#favorites-extensions-favorites)
+    * [git-project-manager {#extensions-git-project-manager}](#git-project-manager-extensions-git-project-manager)
     * [Gitlens {#extensions-gitlens}](#gitlens-extensions-gitlens)
     * [Vscode Google Translate {#extensions-google-translate}](#vscode-google-translate-extensions-google-translate)
       * [Configuration Google Translate](#configuration-google-translate)
-    * [Colouring of source codes according to the language {#extensions-highlight}](#colouring-of-source-codes-according-to-the-language-extensions-highlight)
+    * [Coloring of source codes according to the language {#extensions-highlight}](#coloring-of-source-codes-according-to-the-language-extensions-highlight)
       * [Apache configuration file {#highlight-apache}](#apache-configuration-file-highlight-apache)
       * [Log File Highlighter {#extensions_log-file-highlighter}](#log-file-highlighter-extensions_log-file-highlighter)
     * [Prettier {#extensions-prettier-vscode}](#prettier-extensions-prettier-vscode)
@@ -107,6 +110,7 @@
   * [Javascript {#extensions-javascript}](#javascript-extensions-javascript)
     * [ESLint {#extensions-eslint}](#eslint-extensions-eslint)
   * [Markdown {#extensions-markdown}](#markdown-extensions-markdown)
+    * [Emoji {#extensions-emoji}](#emoji-extensions-emoji)
     * [Markdown All in One {#extensions-markdown-all-in-one}](#markdown-all-in-one-extensions-markdown-all-in-one)
     * [Markdownlint {#extensions-markdownlint}](#markdownlint-extensions-markdownlint)
       * [Configuration Markdownlint {#extensions-markdownlint-configuration}](#configuration-markdownlint-extensions-markdownlint-configuration)
@@ -125,7 +129,9 @@
     * [PHP-CS-FIXER {#extensions-php-cs-fixer}](#php-cs-fixer-extensions-php-cs-fixer)
     * [PHP DocBlocker {#extensions-php-docblocker}](#php-docblocker-extensions-php-docblocker)
     * [PHP Extension Pack {#extensions-php-extension-pack}](#php-extension-pack-extensions-php-extension-pack)
+    * [PHP getters and setters {#extensions-php-getters-setters}](#php-getters-and-setters-extensions-php-getters-setters)
     * [PHP IntelliSense {#extensions-php-intellisense}](#php-intellisense-extensions-php-intellisense)
+    * [PHP Namespace Resolver {extension-php-namespace-resolver}](#php-namespace-resolver-extension-php-namespace-resolver)
 * [Tips](#tips)
   * [editorconfig](#editorconfig)
   * [Interface](#interface)
@@ -149,6 +155,8 @@
 * [Bookmarks](#bookmarks)
   * [VS Code can do that](#vs-code-can-do-that)
   * [VS Code channel on youtube](#vs-code-channel-on-youtube)
+* [Annex](#annex)
+  * [List of extensions I use](#list-of-extensions-i-use)
 * [License](#license)
 <!-- table-of-contents - end -->
 
@@ -190,7 +198,7 @@ The [Insiders version](https://code.visualstudio.com/insiders/) contains the ver
 
 There are two sorts of settings: `User` or `Workspace`. Remember, you can quickly access settings thanks the <kbd>CTRL</kbd>-<kbd>,</kbd shortcut.
 
- `User` settings are for all yours projects and stored in the `%APPDATA%\Code\User\settings.json` file.
+ `User` settings are for all your projects and stored in the `%APPDATA%\Code\User\settings.json` file.
 
  `Workspace` settings are the opened project and stored in the `.vscode/settings.json` file (in the project's structure).
 
@@ -212,11 +220,11 @@ Select the parent folder, right-click and select `New file` or `New folder`.
 
 #### Keyboard shortcuts {#traversal-shortcuts}
 
-* <kbd>CTRL</kbd>-<kbd>P</kbd> to quick open / go to an opened file. Files are sorted in the list from the most recent till the last recent so it's easy to go back to the previously edited file.
-* <kbd>CTRL</kbd>-<kbd>P</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd> to open the most recent file (the second file in the list). You can press CTRL-P again and again to go the the third, fourth, ... When you'll release keys, the selected file will be immediately open.
+* <kbd>CTRL</kbd>-<kbd>P</kbd> to quick open / go to an open file. Files are sorted in the list from the most recent till the last recent so it's easy to go back to the previously edited file.
+* <kbd>CTRL</kbd>-<kbd>P</kbd>-<kbd>CTRL</kbd>-<kbd>P</kbd> to open the most recent file (the second file in the list). You can press CTRL-P again and again to go to the third, fourth, ... When you release keys, the selected file will be immediately open.
 * <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>O</kbd> to open (browse) a symbol[^symbol] in the opened file. Navigating with the arrows will select the portion of code in the editor.
 * <kbd>CTRL</kbd>-<kbd>T</kbd> to open (browse) a symbol[^symbol] in the entire project. In a markdown file, <kbd>CTRL</kbd>-<kbd>T</kbd> will display the list of every headings f.i.
-* <kbd>CTRL</kbd>-<kbd>TAB</kbd> to switch between opened tabs (just like Windows and active applications).
+* <kbd>CTRL</kbd>-<kbd>TAB</kbd> to switch between open tabs (just like Windows and active applications).
 * <kbd>CTRL</kbd>-<kbd>K</kbd>-<kbd>CTRL</kbd>-<kbd>Q</kbd> go back to the last edited line.
 
 #### Select first {#traversal-select-first}
@@ -237,11 +245,11 @@ Depending on the open file and its language (php, js, markdown, ...), *VSCode* w
 
 Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the Palette Command then type `Insert Snippet` to get the list of already existing snippets.
 
-##### User defined ones {#snippets-user-defined}
+##### User-defined ones {#snippets-user-defined}
 
-It is however possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
+It is however, possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
 
-A file called `php.json` will be opened and you can start to create a snippet; f.i.:
+A file called `php.json` will be open and you can start to create a snippet; f.i.:
 
 ```json
 {
@@ -253,9 +261,9 @@ A file called `php.json` will be opened and you can start to create a snippet; f
 }
 ```
 
-The code here above define a snippet called `strict` and it's for a `.php` file. Open such file, start to type `stri` (you can type only a few letters) and press the <kbd>CTRL</kbd>-<kbd>space</kbd> keys. Select the snippet and press <kbd>enter</kbd>. You'll get the code defined in the `body`. It's magic.
+The code here above defines a snippet called `strict` and it's for a `.php` file. Open such file, start to type `stri` (you can type only a few letters) and press the <kbd>CTRL</kbd>-<kbd>space</kbd> keys. Select the snippet and press <kbd>enter</kbd>. You'll get the code defined in the `body`. It's magic.
 
-Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check your `User Settings` and make sure the following key is well on `on`:
+Note: you can also desire to just press the <kbd>TAB</kbd> key. If so, check your `User Settings` and make sure the following key is well on `on`:
 
 ```json
 {
@@ -336,7 +344,7 @@ Also see the [snippet-creator](#extensions-snippet-creator) extension.
 
 You can also define your snippets for your project and not globally. You can then share snippets with your colleagues f.i.
 
-1. In the root folder of your project, create a `.vscode` folder if not yet present;
+1. In the root folder of your project create a `.vscode` folder if not yet present;
 2. Create a file with the `.code-snippets` extension like `my-project.code-snippets`;
 3. You can configure your snippets there.
 
@@ -375,7 +383,7 @@ You can choose for a DOS terminal, Powershell or bash one. Just select the `Sele
 
 ![Terminal](./010-first-approach/070-terminal/images/terminal.png)
 
-Note: by clicking on the `+` button, we can create as many terminal we want.
+Note: by clicking on the `+` button, we can create as many terminals we want.
 
 #### Extensions {#terminal-extensions}
 
@@ -436,7 +444,7 @@ For instance, if the project has never been sent to git, you can initialize the 
 * Open the `Terminal` (<kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>ù</kbd>). You'll be placed in the root folder of the project;
 * `git init` to initialize your local repository;
 * `git add .` to add all files to the staging area of your repository. Visual Studio Code will change the color of any files and folders in the tree-view to reflect that files are now in the staging area and ready to be committed;
-* `git commit -m 'My initial commit'` to commit everything to the local repository. Color in the tree-view will be back in white (no more green) meaning that files are now placed in the repo.;
+* `git commit -m 'My initial commit'` to commit everything to the local repository. Color in the tree-view will be back in white (no greener) meaning that files are now placed in the repo.;
 
 If you now change a file by appending a new function, removing part of the code, changing a variable, ... VSCode will display a color (green, red, ...) in the left margin of the code editor reflecting the change.
 
@@ -466,7 +474,7 @@ By right-clicking on a variable, constant or method, we can get access to a few 
 
 In the right area of the popup, we can navigate and click to see each portion of files.
 
-Press <kbd>F12</kbd> to jump in the definition of the method: click or select a method name like in `writeLog(...)` and press <kbd>F12</kbd> once the cursor is located on `writeLog` and you'll jump in the file that implement the method, the method source code will be displayed too.
+Press <kbd>F12</kbd> to jump in the definition of the method: click or select a method name like in `writeLog(...)` and press <kbd>F12</kbd> once the cursor is located on `writeLog` and you'll jump in the file that implements the method, the method source code will be displayed too.
 
 <!-- below, content of ./020-working-with-code/040-phpunit/readme.md -->
 
@@ -492,7 +500,7 @@ URL: [https://xdebug.org](https://xdebug.org/)
 
 * Open `http://localhost/?phpinfo=1` and make <kbd>CTRL</kbd>-<kbd>A</kbd>/<kbd>CTRL</kbd>-<kbd>C</kbd>
 * Open `https://xdebug.org/wizard.php` and <kbd>CTRL</kbd><kbd>V</kbd> there
-* Click on the `Analyse my phpinfo() output` button
+* Click on the `Analyze my phpinfo() output` button
 
 Follow installation steps:
 
@@ -528,7 +536,7 @@ Tutorial by Microsoft: `https://code.visualstudio.com/docs/editor/debugging#_lau
 
 ##### Settings
 
-Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who make possible to ignore certain files from a debugger perspective. Here, ask to not go into vendors scripts (and stay in our own scripts):
+Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ignore` one who makes possible to ignore certain files from a debugger perspective. Here, ask not to go into vendors scripts (and stay in our own scripts):
 
 ```json
 {
@@ -555,7 +563,7 @@ The list of all settings can be retrieved here: [https://code.visualstudio.com/d
 
 ##### Use inside vscode
 
-Open your PHP file and add breakpoints. To do so, click on the line in your code where you want that the browser needs to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
+Open your PHP file and add breakpoints. To do so, click on the line in your code where you want the browser to need to stop and click on the `Debug` menu then click on `Toggle breakpoint`. A red bullet will appear near the line number:
 
 ![Red bullet](./020-working-with-code/045-xdebug/images/xdebug_visual_studio_breakpoints.png)
 
@@ -649,7 +657,7 @@ I's not really like a `Search` and `Replace all` since here we can decide how ma
 
 Here is how to do:
 
-1. Select a bloc a lines
+1. Select a bloc a line
 2. Press <kbd>SHIFT</kbd>-<kbd>ALT</kbd>-<kbd>I</kbd> to enable multiple cursors
 3. Press <kbd>Home</kbd> to put cursors at the beginning of each lines,
 4. Press <kbd>*</kbd> followed by a space to transform the list of lines to a bullet list.
@@ -736,13 +744,13 @@ For PHP, for install the `PHP Refactor Tool` addon.
 
 ![Renaming a symbol](./030-refactoring/010-rename/images/rename_symbol.gif)
 
-Thanks to `PHP Refactor Tool`, all occurences of the property will be renamed, the getter and the setter and every where these functions were used too. In all files of your project.
+Thanks to `PHP Refactor Tool`, all occurrences of the property will be renamed, the getter and the setter and everywhere these functions were used too. In all files of your project.
 
 #### a class
 
 Anywhere in your code (in the class itself or where you use it), select the class name, press <kbd>F2</kbd>, rename it and press <kbd>Enter</kbd>.
 
-Name will be changed everywhere, the name of the file will be changed too as you can see here below.
+The name will be changed everywhere, the name of the file will be changed too as you can see here below.
 
 ![Renaming a class](./030-refactoring/010-rename/images/rename_class.gif)
 
@@ -941,7 +949,43 @@ Stop displaying the status bar that appears at the bottom of the screen :
 
 Some extensions that will be useful for any PHP developer.
 
-Note: to get the list of already installed extensions, press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>X</kbd> and type `@installed` in the text box to get the list.
+### Get the list of all installed extensions {extensions-list-extensions}
+
+You can use vscode on the command line with the `--list-extensions` option to retrieve the list of all installed extensions.
+
+Open a DOS Prompt Session and run `code --list-extensions`. You'll get a list like below:
+
+```text
+aaron-bond.better-comments
+alefragnani.Bookmarks
+bajdzis.vscode-twig-pack
+bmewburn.vscode-intelephense-client
+bobmagicii.autofoldyeah
+calebporzio.better-phpunit
+...
+```
+
+By running a `Windows Powershell` prompt, you can quickly generate a list of vscode instructions to install all these extensions. Start `Windows Powershell` and run the following command:
+
+```powershell
+code --list-extensions | % { "code --install-extension $_" }
+```
+
+You'll get a list like below:
+
+```text
+code --install-extension aaron-bond.better-comments
+code --install-extension alefragnani.Bookmarks
+code --install-extension bajdzis.vscode-twig-pack
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension bobmagicii.autofoldyeah
+code --install-extension calebporzio.better-phpunit
+...
+```
+
+![List of all installed extensions](./070-extensions/images/code-list-extensions.png)
+
+Just copy/paste the full output and, f.i. send it by mail to someone. He'll just need to paste the list in a DOS Prompt Session to install them.
 
 <!-- below, content of ./070-extensions/core/readme.md -->
 
@@ -967,7 +1011,7 @@ By opening a file, the autofold extension can automatically collapse docblocks, 
 
 The level (collapse all, from the second, third, ... level) can be configured for each file extension separately.
 
-Here is a sample: by opening that source file, comment's and function's code is collapse automatically, we've directly a better view on what that file is doing.
+Here is a sample: by opening that source file, comments and function code is collapsing automatically, we've directly a better view on what that file is doing.
 
 ![Autofold](./070-extensions/core/autofold/images/autofold.png)
 
@@ -987,7 +1031,7 @@ The Better Comments extension will help you create more human-friendly comments 
 
 > [https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
 
-Allows you to put files in a Bookmark folder, displayed in the icon bar on the left. This allows you to jump very quickly to a file, to a specific line (which would have been bookmarked).
+Allows you to put files in a bookmark folder, displayed in the icon bar on the left. This allows you to jump very quickly to a file, to a specific line (which would have been bookmarked).
 
 <!-- below, content of ./070-extensions/core/bracket-pair-colorizer/readme.md -->
 
@@ -1008,6 +1052,16 @@ Uses different colors in the editor to properly identify brackets and opening / 
 Easily change the case of variable names; like switching to pascal case, camelCase, CONSTANT, ...
 
 ![Change case](./070-extensions/core/change-case/images/change-case.gif)
+
+<!-- below, content of ./070-extensions/core/code-runner/readme.md -->
+
+#### Code runner {#extension-code-runner}
+
+> [https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+
+With Code runner, open a supported code source (like PHP or Python) and press  <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>R</kbd> to run that code and get the result in the console. You even don't need to save the file.
+
+![Code run](./070-extensions/core/code-runner/images/code-run.gif)
 
 <!-- below, content of ./070-extensions/core/code-spell-checker/readme.md -->
 
@@ -1038,6 +1092,26 @@ EditorConfig extension for Visual Studio Code [https://editorconfig.org/](https:
 Allows you to group shortcuts to files that, for example, you often have to open.
 
 ![Favorites](./070-extensions/core/favorites/images/favorites.jpg)
+
+<!-- below, content of ./070-extensions/core/git-project-manager/readme.md -->
+
+#### git-project-manager {#extensions-git-project-manager}
+
+> [https://github.com/felipecaputo/git-project-manager](https://github.com/felipecaputo/git-project-manager)
+
+A Git Project Manager extension for vsCode.
+
+Using GPM, it's now really easy to open a project: just press <kbd>CTRL</kbd>-<kbd>P</kbd> to open the Command Palette and select `GPM: Open Git Project`. Then you'll get the list of all folders on your disk with Git repositories.
+
+First, you'll need to configure the `gitProjectManager.baseProjectsFolders` setting with the list of directories with your project; let's say `C:\Christophe\Repository`. You can mention several folders if you desire to.
+
+You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can define the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
+
+```json
+<!-- concat-md::json "./files/settings.json" -->
+```
+
+![git-project-manager](./070-extensions/core/git-project-manager/images/GPM.gif)
 
 <!-- below, content of ./070-extensions/core/gitlens/readme.md -->
 
@@ -1080,7 +1154,7 @@ Also, it's best to assign keyboard shortcut like <kbd>ALT</kbd>-<kbd>SHIFT</kbd>
 
 <!-- below, content of ./070-extensions/core/highlight/readme.md -->
 
-#### Colouring of source codes according to the language {#extensions-highlight}
+#### Coloring of source codes according to the language {#extensions-highlight}
 
 <!-- below, content of ./070-extensions/core/highlight/apache/readme.md -->
 
@@ -1230,13 +1304,23 @@ Javascript linter
 
 ### Markdown {#extensions-markdown}
 
+<!-- below, content of ./070-extensions/markdown/insert-emoji/readme.md -->
+
+#### Emoji {#extensions-emoji}
+
+> [https://marketplace.visualstudio.com/items?itemName=perkovec.emoji](https://marketplace.visualstudio.com/items?itemName=perkovec.emoji)
+
+Insert an emoji without leaving the editor. The
+
+![Insert emoji](./070-extensions/markdown/insert-emoji/images/insert-emoji.gif)
+
 <!-- below, content of ./070-extensions/markdown/markdown-all-in-one/readme.md -->
 
 #### Markdown All in One {#extensions-markdown-all-in-one}
 
 > [https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
-Implements keyboard shortcuts for the Markdown language, allows the generation of tables of contents, preview, ...
+Implements keyboard shortcuts for the Markdown language allows the generation of tables of contents, preview, ...
 
 <!-- below, content of ./070-extensions/markdown/markdown-lint/readme.md -->
 
@@ -1387,7 +1471,11 @@ php-cs-fixer is using a `.php-cs` file for his configuration; there are a lot of
 
 > [https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker)
 
-Allows to generate documentation blocks of classes, methods, ...
+Allows generating documentation blocks of classes, methods, ...
+
+Essential extension for any PHP programmer because it allows generating docblocks to document methods, properties, constants, ... in a PHP source code.
+
+![PHP DocBlock](./070-extensions/php/php-docblocker/images/php-docblock.gif)
 
 <!-- below, content of ./070-extensions/php/php-extension-pack/reame.md -->
 
@@ -1396,6 +1484,20 @@ Allows to generate documentation blocks of classes, methods, ...
 > [https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack)
 
 Includes the most important extensions to get you started with PHP development in Visual Studio Code.
+
+<!-- below, content of ./070-extensions/php/php-getters-setters/readme.md -->
+
+#### PHP getters and setters {#extensions-php-getters-setters}
+
+> [https://github.com/phproberto/vscode-php-getters-setters](https://github.com/phproberto/vscode-php-getters-setters)
+
+Create a new property in your class; right-click on it and choose `Insert PHP Getter & Setter` to generate PHP code for both actions.
+
+Really easy...
+
+![Insert PHP Getter & Setter](./070-extensions/php/php-getters-setters/images/insert-php-getter-setter.jpg)
+
+The extension can be configured (see [https://github.com/phproberto/vscode-php-getters-setters#extension-settings](https://github.com/phproberto/vscode-php-getters-setters#extension-settings)) and, if you wish, you can redefine the code of the Setter for instance (as an example, you can decide not to return the value).
 
 <!-- below, content of ./070-extensions/php/php-intellisense/readme.md -->
 
@@ -1406,6 +1508,16 @@ Includes the most important extensions to get you started with PHP development i
 Advanced PHP IntelliSense for Visual Studio Code.
 
 ![PHP IntelliSense](./070-extensions/php/php-intellisense/images/signatureHelp.gif)
+
+<!-- below, content of ./070-extensions/php/php-namespace-resolver/readme.md -->
+
+#### PHP Namespace Resolver {extension-php-namespace-resolver}
+
+> [https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver](https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver)
+
+In a PHP file, right-click on a class name and PHP Namespace Resolver will search where that class is defined (based on your `composer.json` file). If there is only one occurrence, the class will be immediately added in a `use` command. Otherwise, you'll be prompted to select the desired one.
+
+![PHP Namespace Resolver](./070-extensions/php/php-namespace-resolver/images/php-namespace-resolver.gif)
 
 <!-- below, content of ./080-tips/readme.md -->
 
@@ -1465,7 +1577,7 @@ Colors have to be set in the `.vscode/settings.json` file in the project root fo
 }
 ```
 
-To open that settings file, just go to your `Workspace settings` page.
+To open that setting file, just go to your `Workspace settings` page.
 
 ![Interface colors](./080-tips/interface/colors/images/interface_colors.png)
 
@@ -1571,9 +1683,9 @@ Imagine you've a big JSON file with f.i. a list of users like this:
 
 From that list you wish to keep only lines with emails.
 
-The idea is to use a regex expression so we can match emails lines and use a negative search so not emails lines are selected:
+The idea is to use a regex expression so we can match email lines and use a negative search so not email lines are selected:
 
-To match emails lines (with the carriage return at the end), we'll use `.*email.*\n`.
+To match email lines (with the carriage return at the end), we'll use `.*email.*\n`.
 
 For the use case, we'll search for `.*email.*\n` and replace by nothing: emails lines will be removed in the entire file.
 
@@ -1631,7 +1743,7 @@ Tip: it's possible to specify more than one command using the `&&` syntax; f.i. 
 
 #### Run PHP-Unit {#custom-tasks-phpunit}
 
-Another example can be to run PHP Unit with some command line options.
+Another example can be to run PHP Unit with some command-line options.
 
 The example below defines a `phpunit: run tests\Api` task so we can execute all tests under the `Api` folder. We can of course use any command line options supported by PHP Unit.
 
@@ -1737,6 +1849,83 @@ All the best things about Visual Studio Code that nobody ever bothered to tell y
 ### VS Code channel on youtube
 
 > [https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w](https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w)
+
+<!-- below, content of ./900-annex/readme.md -->
+
+## Annex
+
+### List of extensions I use
+
+You can create the same list by running ` code --list-extensions | % { "code --install-extension $_" }` in a `Windows Powershell` prompt.
+
+```text
+code --install-extension aaron-bond.better-comments
+code --install-extension alefragnani.Bookmarks
+code --install-extension bajdzis.vscode-twig-pack
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension bobmagicii.autofoldyeah
+code --install-extension calebporzio.better-phpunit
+code --install-extension Cameron.rerun-last-command
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension DotJoshJohnson.xml
+code --install-extension druideinformatique.antidote
+code --install-extension eamodio.gitlens
+code --install-extension EditorConfig.EditorConfig
+code --install-extension emilast.LogFileHighlighter
+code --install-extension esbenp.prettier-vscode
+code --install-extension felipecaputo.git-project-manager
+code --install-extension felixfbecker.php-debug
+code --install-extension felixfbecker.php-intellisense
+code --install-extension felixfbecker.php-pack
+code --install-extension formulahendry.auto-close-tag
+code --install-extension formulahendry.code-runner
+code --install-extension GrapeCity.gc-excelviewer
+code --install-extension Gruntfuggly.todo-tree
+code --install-extension hollowtree.vue-snippets
+code --install-extension ikappas.phpcs
+code --install-extension ionutvmi.reg
+code --install-extension johnpapa.vscode-peacock
+code --install-extension junstyle.php-cs-fixer
+code --install-extension Kasik96.latte
+code --install-extension marsl.vscode-php-refactoring
+code --install-extension mblode.twig-language
+code --install-extension mde.select-highlight-minimap
+code --install-extension mechatroner.rainbow-csv
+code --install-extension MehediDracula.php-namespace-resolver
+code --install-extension mikestead.dotenv
+code --install-extension mrmlnc.vscode-apache
+code --install-extension mrmlnc.vscode-duplicate
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode.powershell
+code --install-extension neilbrayfield.php-docblocker
+code --install-extension NiclasvanEyk.am-i-behind
+code --install-extension nonoroazoro.syncing
+code --install-extension octref.vetur
+code --install-extension olback.es6-css-minify
+code --install-extension Otiel.vscode-xyplorer
+code --install-extension Perkovec.emoji
+code --install-extension persoderlind.vscode-phpcbf
+code --install-extension phproberto.vscode-php-getters-setters
+code --install-extension RoscoP.ActiveFileInStatusBar
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension SirTori.indenticator
+code --install-extension slevesque.vscode-autohotkey
+code --install-extension slevesque.vscode-hexdump
+code --install-extension spences10.vba
+code --install-extension st-pham.php-refactor-tool
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension TabNine.tabnine-vscode
+code --install-extension tomoyukim.vscode-mermaid-editor
+code --install-extension Tyriar.sort-lines
+code --install-extension TysonAndre.php-phan
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension whatwedo.twig
+code --install-extension Christophe Avonture.writing-documentation-snippets
+code --install-extension yatki.vscode-surround
+code --install-extension yzhang.markdown-all-in-one
+```
 
 <!-- below, content of ./999-license/readme.md -->
 

@@ -10,19 +10,19 @@ Depending on the open file and its language (php, js, markdown, ...), *VSCode* w
 
 Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the Palette Command then type `Insert Snippet` to get the list of already existing snippets.
 
-### User defined ones {#snippets-user-defined}
+### User-defined ones {#snippets-user-defined}
 
-It is however possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
+It is however, possible to write your own snippets: press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> then `Configure User Snippets`. The programming language is chosen, e.g. `PHP`, which will open an editor with, here, the open `PHP` file.
 
-A file called `php.json` will be opened and you can start to create a snippet; f.i.:
+A file called `php.json` will be open and you can start to create a snippet; f.i.:
 
 ```json
 <!-- concat-md::include "./files/strict.json" -->
 ```
 
-The code here above define a snippet called `strict` and it's for a `.php` file. Open such file, start to type `stri` (you can type only a few letters) and press the <kbd>CTRL</kbd>-<kbd>space</kbd> keys. Select the snippet and press <kbd>enter</kbd>. You'll get the code defined in the `body`. It's magic.
+The code here above defines a snippet called `strict` and it's for a `.php` file. Open such file, start to type `stri` (you can type only a few letters) and press the <kbd>CTRL</kbd>-<kbd>space</kbd> keys. Select the snippet and press <kbd>enter</kbd>. You'll get the code defined in the `body`. It's magic.
 
-Note: you can also desired to just press the <kbd>TAB</kbd> key. If so, check your `User Settings` and make sure the following key is well on `on`:
+Note: you can also desire to just press the <kbd>TAB</kbd> key. If so, check your `User Settings` and make sure the following key is well on `on`:
 
 ```json
 <!-- concat-md::include "./files/tabCompletion.json" -->
@@ -74,7 +74,7 @@ Also see the [snippet-creator](#extensions-snippet-creator) extension.
 
 You can also define your snippets for your project and not globally. You can then share snippets with your colleagues f.i.
 
-1. In the root folder of your project, create a `.vscode` folder if not yet present;
+1. In the root folder of your project create a `.vscode` folder if not yet present;
 2. Create a file with the `.code-snippets` extension like `my-project.code-snippets`;
 3. You can configure your snippets there.
 
