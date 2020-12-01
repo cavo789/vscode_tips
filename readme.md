@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-01 16:10:28 -->
+<!-- Last refresh date: 2020-12-01 16:25:58 -->
 
 <!-- below, content of ./index.md -->
 
@@ -547,7 +547,7 @@ Settings are saved in the `/.vscode/launch.json` file. A nice option is the `ign
             "type": "php",
             "request": "launch",
             "port": 9000,
-            "ignore": ["**/bin/**/*","**/vendor/**/*.php"],
+            "ignore": ["**/bin/**/*","**/vendor/**/*"],
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
