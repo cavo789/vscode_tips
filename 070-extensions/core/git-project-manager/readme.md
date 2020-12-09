@@ -11,7 +11,7 @@ First, you'll need to configure the `gitProjectManager.baseProjectsFolders` sett
 You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can define the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
 
 ```json
-<!-- concat-md::json "./files/settings.json" -->
+<!-- concat-md::include "./files/settings.json" -->
 ```
 
 ![git-project-manager](./images/GPM.gif)

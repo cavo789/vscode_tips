@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-01 16:25:58 -->
+<!-- Last refresh date: 2020-12-09 13:40:55 -->
 
 <!-- below, content of ./index.md -->
 
@@ -77,6 +77,8 @@
   * [Workbench settings {#settings-workbench}](#workbench-settings-settings-workbench)
 * [Extensions {#extensions}](#extensions-extensions)
   * [Get the list of all installed extensions {extensions-list-extensions}](#get-the-list-of-all-installed-extensions-extensions-list-extensions)
+  * [Bash -  Shellscript {#extensions-sh}](#bash-shellscript-extensions-sh)
+    * [Shell-format {#extensions-shell-format}](#shell-format-extensions-shell-format)
   * [Extend core features of Visual Studio Code {#extensions-core}](#extend-core-features-of-visual-studio-code-extensions-core)
     * [Active File In StatusBar {#extensions-active-file-statusbar}](#active-file-in-statusbar-extensions-active-file-statusbar)
     * [Autofold {#extensions-autofold}](#autofold-extensions-autofold)
@@ -987,6 +989,18 @@ code --install-extension calebporzio.better-phpunit
 
 Just copy/paste the full output and, f.i. send it by mail to someone. He'll just need to paste the list in a DOS Prompt Session to install them.
 
+<!-- below, content of ./070-extensions/bash/readme.md -->
+
+### Bash -  Shellscript {#extensions-sh}
+
+<!-- below, content of ./070-extensions/bash/shell-format/readme.md -->
+
+#### Shell-format {#extensions-shell-format}
+
+> [https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format)
+
+Linter for `.sh` scripts.
+
 <!-- below, content of ./070-extensions/core/readme.md -->
 
 ### Extend core features of Visual Studio Code {#extensions-core}
@@ -1108,7 +1122,16 @@ First, you'll need to configure the `gitProjectManager.baseProjectsFolders` sett
 You can also specify a root folder and playing with the `gitProjectManager.maxDepthRecursion` setting, you can define the recursion (*the higher the number, the slower the system will be to retrieve the list of projects*).
 
 ```json
-<!-- concat-md::json "./files/settings.json" -->
+{
+    "gitProjectManager.baseProjectsFolders": [
+        "C:\\Christophe\\Repository"
+    ],
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "gitProjectManager.ignoredFolders": ["node_modules","vendor"],
+    "gitProjectManager.maxDepthRecursion": 2,
+    "gitProjectManager.checkRemoteOrigin": false,
+    "gitProjectManager.openInNewWindow": false
+}
 ```
 
 ![git-project-manager](./070-extensions/core/git-project-manager/images/GPM.gif)
