@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-09 13:40:55 -->
+<!-- Last refresh date: 2020-12-24 09:03:59 -->
 
 <!-- below, content of ./index.md -->
 
@@ -104,6 +104,7 @@
     * [Select highlight in minimap {#extensions-select-highlight-minimap}](#select-highlight-in-minimap-extensions-select-highlight-minimap)
     * [Snippet-creator {#extensions-snippet-creator}](#snippet-creator-extensions-snippet-creator)
     * [Sort lines {#extensions-sort-lines}](#sort-lines-extensions-sort-lines)
+    * [Start any shell {#extensions-start-any-shell}](#start-any-shell-extensions-start-any-shell)
     * [Surround {#extensions-surround}](#surround-extensions-surround)
     * [Syncing {#extensions-syncing}](#syncing-extensions-syncing)
     * [TabNine {#extensions-tabnine}](#tabnine-extensions-tabnine)
@@ -1264,6 +1265,18 @@ The [snippet-creator](https://marketplace.visualstudio.com/items?itemName=nikita
 Sorts lines of text.
 
 ![Sort lines](./070-extensions/core/sort-lines/images/usage-animation.gif)
+
+<!-- below, content of ./070-extensions/core/start-any-shell/readme.md -->
+
+#### Start any shell {#extensions-start-any-shell}
+
+> [https://github.com/remcoros/vscode-startanyshell](https://github.com/remcoros/vscode-startanyshell)
+
+Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>C</kbd> to start a shell like DOS Prompt, Windows Powershell or Git Bash. The startup folder will be the root of your project.
+
+So easy to run DOS batch, powershell or Bash scripts or any other commands (git, composer, ...).
+
+![Start any shell](./070-extensions/core/start-any-shell/images/start-any-shell.png)
 
 <!-- below, content of ./070-extensions/core/surround/readme.md -->
 
