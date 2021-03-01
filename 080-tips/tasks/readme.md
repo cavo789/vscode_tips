@@ -39,3 +39,37 @@ The example below defines a `phpunit: run tests\Api` task so we can execute all 
 ```
 
 Note: the `type` defined in the JSON file is `process`, this means that the defined `command` will be executed within vscode, in the `Terminal`. The process should then be an executable and any parameters have to be defined in the `args` array;
+
+## Fire the task automatically when the project is opened in vscode {#task-autorun}
+
+When you define a task with the following setting, that task can be fired automatically by VSCode during the opening of the editor.
+
+```json
+"runOptions": {
+    "runOn": "folderOpen"
+}
+```
+
+In the complete example below, the `docker-up.bat` is a DOS script that will set-up `Docker` for my project.
+
+```json
+<!-- concat-md::include "./files/autorun.json" -->
+```
+
+In VSCode, we need to
+
+1. Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`.
+2. Search for `Tasks: Manage Auotomatic Tasks in Folder`,
+3. Select `Allow Automatic Tasks in Folder`
+
+So we allow VSCode to run automatic tasks for that project.
+
+Then:
+
+1. Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`.
+2. Search for `Tasks: Run Task`,
+3. and select our task
+
+The task will be fired.
+
+Close VScode and open it again and check your console, the task has been fired automagically.
