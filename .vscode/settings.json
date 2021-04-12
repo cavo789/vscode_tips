@@ -19,22 +19,6 @@
     ],
     "markdownlint.run": "onSave",
     "markdownlint.customRules": [],
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#75afae",
-        "activityBar.activeBorder": "#f3ebf3",
-        "activityBar.background": "#75afae",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#f3ebf3",
-        "activityBarBadge.foreground": "#15202b",
-        "statusBar.background": "#589997",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#457977",
-        "titleBar.activeBackground": "#589997",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#58999799",
-        "titleBar.inactiveForeground": "#15202b99"
-    },
     "peacock.color": "#589997",
     "phpcbf.enable": false,
     "phpcbf.documentFormattingProvider": false
