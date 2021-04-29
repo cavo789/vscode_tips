@@ -2,6 +2,24 @@
 
 Some extensions that will be useful for any PHP developer.
 
+## Unneeded extensions
+
+Unneeded because vscode can do the same natively... After each names here below, the setting to enable in VSCode, somes are already enabled by default:
+
+* [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+    * `"editor.renameOnType":true`
+* [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
+    * `"javascript.suggest.autoImports": true,`
+    * `"typescript.suggest.autoImports": true,`
+    * `"javascript.updateImportsOnFileMove.enabled": "always",`
+    * `"typescript.updateImportsOnFileMove.enabled": "always",`
+* [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+    * `"html.autoClosingTags": true,`
+    * `"javascript.autoClosingTags": true,`
+    * `"typescript.autoClosingTags": true`
+* [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+    * See [https://code.visualstudio.com/updates/v1_48#_settings-sync](https://code.visualstudio.com/updates/v1_48#_settings-sync)
+
 ## Get the list of all installed extensions {extensions-list-extensions}
 
 You can use vscode on the command line with the `--list-extensions` option to retrieve the list of all installed extensions.
