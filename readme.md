@@ -9,7 +9,7 @@ language: "en"
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-24 09:03:59 -->
+<!-- Last refresh date: 2021-03-01 10:45:33 -->
 
 <!-- below, content of ./index.md -->
 
@@ -156,6 +156,7 @@ language: "en"
   * [Custom tasks {#custom-tasks}](#custom-tasks-custom-tasks)
     * [Run a DOS batch {#custom-tasks-batch}](#run-a-dos-batch-custom-tasks-batch)
     * [Run PHP-Unit {#custom-tasks-phpunit}](#run-php-unit-custom-tasks-phpunit)
+    * [Fire the task automatically when the project is opened in vscode {#task-autorun}](#fire-the-task-automatically-when-the-project-is-opened-in-vscode-task-autorun)
 * [Troubleshooting {#troubleshooting}](#troubleshooting-troubleshooting)
   * [Intelephense {#troubleshooting-intelephense}](#intelephense-troubleshooting-intelephense)
   * [Phan {#troubleshooting-phan}](#phan-troubleshooting-phan)
@@ -1812,6 +1813,56 @@ The example below defines a `phpunit: run tests\Api` task so we can execute all 
 ```
 
 Note: the `type` defined in the JSON file is `process`, this means that the defined `command` will be executed within vscode, in the `Terminal`. The process should then be an executable and any parameters have to be defined in the `args` array;
+
+#### Fire the task automatically when the project is opened in vscode {#task-autorun}
+
+When you define a task with the following setting, that task can be fired automatically by VSCode during the opening of the editor.
+
+```json
+"runOptions": {
+    "runOn": "folderOpen"
+}
+```
+
+In the complete example below, the `docker-up.bat` is a DOS script that will set-up `Docker` for my project.
+
+```json
+{
+    "label": "Docker-up ",
+    "type": "shell",
+    "command": "docker-up.bat",
+    "problemMatcher": [],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+    },
+    "runOptions": {
+        "runOn": "folderOpen"
+    }
+}
+```
+
+In VSCode, we need to
+
+1. Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`.
+2. Search for `Tasks: Manage Auotomatic Tasks in Folder`,
+3. Select `Allow Automatic Tasks in Folder`
+
+So we allow VSCode to run automatic tasks for that project.
+
+Then:
+
+1. Press <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd> to open the `Command Palette`.
+2. Search for `Tasks: Run Task`,
+3. and select our task
+
+The task will be fired.
+
+Close VScode and open it again and check your console, the task has been fired automagically.
 
 <!-- below, content of ./090-troubleshooting/readme.md -->
 
