@@ -1,9 +1,0 @@
-titlepage: true,
-titlepage-color: "007F9F"
-titlepage-text-color: "FFFFFF"
-titlepage-rule-color: "FFFFFF"
-toc-own-page: true
-numbersections: false
-highlight: "zenburn"
-lang: "en"
-author: [Christophe Avonture]
