@@ -15,7 +15,7 @@ In my case, I like to use `Compare Folders` but no so often so it's best to disa
 > [https://stackoverflow.com/questions/66310913/vscode-with-wsl2-delayed-launching-due-to-no-response-to-ping](https://stackoverflow.com/questions/66310913/vscode-with-wsl2-delayed-launching-due-to-no-response-to-ping)
 > [https://github.com/microsoft/vscode-remote-release/issues/4888](https://github.com/microsoft/vscode-remote-release/issues/4888)
 
-If, running `code .` from a WSL2 prompt is slow, try to set the `remote.WSL.server.connectThroughLocalhost` global setting to `false`.
+If, running `code .` from a WSL2 prompt is slow, try to set the `remote.WSL.server.connectThroughLocalhost` global setting to `true`.
 
 The problem comes from an internal ping done by VSCode on the IP of your machine and in some situation like working on a virtual machine, the ping will be blocked and vscode will wait one minute before throwing a timeout.
 
