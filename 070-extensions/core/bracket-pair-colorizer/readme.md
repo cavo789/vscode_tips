@@ -1,7 +1,3 @@
 # Bracket Pair Colorizer {#extensions-bracket-pair-colorizer}
 
-> [https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
-
-Uses different colors in the editor to properly identify brackets and opening / closing braces.
-
-![Bracket Pair Colorizer](./images/example.png)
+**NO MORE REQUIRED, NOW CORE IN VSCODE 1.60: [https://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization](https://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization)**
