@@ -1,0 +1,11 @@
+{
+    "maptz.regionfolder": {
+        "[dotenv]": {
+            "foldEnd": "# endregion",
+            "foldEndRegex": "^# endregion[\\s]*(.*)",
+            "foldStart": "# region",
+            "foldStartRegex": "^# region[\\s]*(.*)",
+            "disableFolding": false
+        }
+    }
+}
