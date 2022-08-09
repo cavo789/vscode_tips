@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --rm -v "${PWD}"/:/data bosa/writing-doc concat -o readme.md
+docker run --rm -v "${PWD}"/:/data bosa/writing_doc concat -o readme.md
