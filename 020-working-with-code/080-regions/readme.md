@@ -1,4 +1,4 @@
-# regions
+# Regions
 
 `Regions` are a very smart features to make code editing more readable.
 

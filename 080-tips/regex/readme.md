@@ -8,9 +8,10 @@ Imagine you want to remove all commented lines and the character used for commen
 * Replace by *let this field empty*
 
 The regex means: 
-    * `^#`: we want all lines starting with `#`
-    * `.*`: followed by any character
-    * `[\n|\r]*`: and followed by one or more carriage return / linefeed.
+
+* `^#`: we want all lines starting with `#`
+* `.*`: followed by any character
+* `[\n|\r]*`: and followed by one or more carriage return / linefeed.
 
 ## Remove all empty lines
 
