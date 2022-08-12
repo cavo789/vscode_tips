@@ -1,5 +1,17 @@
 # Search and replace - Regex
 
+## Remove all lines starting with 
+
+Imagine you want to remove all commented lines and the character used for comments is a `#` so you want to remove lines starting with `#`.
+
+* Search `^#.*[\n|\r]*`
+* Replace by *let this field empty*
+
+The regex means: 
+    * `^#`: we want all lines starting with `#`
+    * `.*`: followed by any character
+    * `[\n|\r]*`: and followed by one or more carriage return / linefeed.
+
 ## Remove all empty lines
 
 > [https://dev.to/gyurisc/easily-remove-empty-lines-using-regular-expression-in-visual-studio-code-1230](https://dev.to/gyurisc/easily-remove-empty-lines-using-regular-expression-in-visual-studio-code-1230)
